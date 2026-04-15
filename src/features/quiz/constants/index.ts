@@ -28,7 +28,7 @@ export const CHARACTER_CARDS = charactersData as Record<CharacterCode, ParentCha
 export const QUESTIONS = questionsData as QuizQuestion[];
 
 /**
- * 小剧场句子池
+ * 小剧场完整故事映射（按组合键）
  */
 export const STORY_TEMPLATES = storyTemplatesData as StoryTemplate;
 

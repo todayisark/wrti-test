@@ -103,7 +103,7 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
 
   // 8. 生成结果标题和摘要
   const resultTitle = `你的性格特征是`;
-  const resultSummary = `${childProfile.emoji} ${childProfile.label}`;
+  const resultSummary = `${childProfile.emoji}\n${childProfile.label}`;
 
   // 9. 构建返回结果
   const result: QuizResult = {

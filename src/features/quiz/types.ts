@@ -154,20 +154,10 @@ export type QuizResult = {
 // ==================== 小剧场模板 ====================
 
 /**
- * 小剧场句子池
+ * 小剧场映射
+ * 使用组合键（如 W1_I1）映射到完整故事文本
  */
-export type StoryTemplate = {
-  /** 开场白句子池 */
-  opening: string[];
-  /** Wendy 行动句子池（按人格分类） */
-  wendyActions: Record<WendyCode, string[]>;
-  /** Irene 行动句子池（按人格分类） */
-  ireneActions: Record<IreneCode, string[]>;
-  /** 孩子反应句子池 */
-  childReactions: string[];
-  /** 结尾句子池 */
-  endings: string[];
-};
+export type StoryTemplate = Record<ChildCombinationKey, string>;
 
 // ==================== API 响应类型 ====================
 

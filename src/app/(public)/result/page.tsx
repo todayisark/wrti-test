@@ -102,7 +102,26 @@ const ResultPage = () => {
           <Typography variant="body1" sx={{ color: 'text.secondary' }}>
             {result.resultTitle}
           </Typography>
-          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 'bold',
+              mb: 1,
+              mt: 2,
+              display: 'inline-block',
+              backgroundImage: 'linear-gradient(90deg, #ec4899, #3b82f6, #ec4899)',
+              backgroundSize: '200% auto',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: 'flowGradient 4s linear infinite',
+              whiteSpace: 'pre-line',
+              lineHeight: 1.3,
+              '@keyframes flowGradient': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '200% 50%' },
+              },
+            }}
+          >
             {result.resultSummary}
           </Typography>
         </Box>
@@ -193,7 +212,7 @@ const ResultPage = () => {
               <Box component="span" sx={{ mr: 1 }}>
                 💝
               </Box>
-              她们会怎么爱你
+              你在她们爱里的样子
             </Typography>
             <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
               {result.childProfile.parentingStyle}

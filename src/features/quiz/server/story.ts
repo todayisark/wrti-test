@@ -1,18 +1,10 @@
 /**
  * 小剧场生成模块
- * 使用句子池随机生成个性化小剧场
+ * 使用人格组合键直接读取完整故事
  */
 
 import { STORY_TEMPLATES } from '../constants';
-import type { CharacterCode, WendyCode, IreneCode } from '../types';
-
-/**
- * 从数组中随机选择一个元素
- */
-const randomPick = <T>(array: T[]): T => {
-  const index = Math.floor(Math.random() * array.length);
-  return array[index];
-};
+import type { WendyCode, IreneCode, ChildCombinationKey } from '../types';
 
 /**
  * 生成完整的小剧场文本
@@ -21,25 +13,8 @@ const randomPick = <T>(array: T[]): T => {
  * @returns 生成的小剧场文本
  */
 export const generateStory = (wendyCode: WendyCode, ireneCode: IreneCode): string => {
-  // 1. 随机选择开场
-  const opening = randomPick(STORY_TEMPLATES.opening);
-
-  // 2. 根据 Wendy 人格选择对应的行为描述
-  const wendyActions = STORY_TEMPLATES.wendyActions[wendyCode];
-  const wendyAction = randomPick(wendyActions);
-
-  // 3. 根据 Irene 人格选择对应的行为描述
-  const ireneActions = STORY_TEMPLATES.ireneActions[ireneCode];
-  const ireneAction = randomPick(ireneActions);
-
-  // 4. 随机选择孩子的反应
-  const childReaction = randomPick(STORY_TEMPLATES.childReactions);
-
-  // 5. 随机选择结尾
-  const ending = randomPick(STORY_TEMPLATES.endings);
-
-  // 6. 组合成完整文本（用换行符分隔段落）
-  return [opening, wendyAction, ireneAction, childReaction, ending].join('\n\n');
+  const storyKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
+  return STORY_TEMPLATES[storyKey] || '这个人格组合的故事还在创作中。';
 };
 
 /**
@@ -54,13 +29,8 @@ export const generateMultipleStories = (
   ireneCode: IreneCode,
   count: number = 3,
 ): string[] => {
-  const stories: string[] = [];
-
-  for (let i = 0; i < count; i++) {
-    stories.push(generateStory(wendyCode, ireneCode));
-  }
-
-  return stories;
+  const story = generateStory(wendyCode, ireneCode);
+  return Array.from({ length: count }, () => story);
 };
 
 /**
@@ -70,11 +40,9 @@ export const generateMultipleStories = (
  * @returns 该人格组合可用的所有句子片段
  */
 export const previewTemplates = (wendyCode: WendyCode, ireneCode: IreneCode) => {
+  const storyKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
   return {
-    opening: STORY_TEMPLATES.opening,
-    wendyActions: STORY_TEMPLATES.wendyActions[wendyCode],
-    ireneActions: STORY_TEMPLATES.ireneActions[ireneCode],
-    childReactions: STORY_TEMPLATES.childReactions,
-    endings: STORY_TEMPLATES.endings,
+    key: storyKey,
+    story: STORY_TEMPLATES[storyKey] || '',
   };
 };
