@@ -23,29 +23,23 @@ const randomPick = <T>(array: T[]): T => {
 export const generateStory = (wendyCode: WendyCode, ireneCode: IreneCode): string => {
   // 1. 随机选择开场
   const opening = randomPick(STORY_TEMPLATES.opening);
-  
+
   // 2. 根据 Wendy 人格选择对应的行为描述
   const wendyActions = STORY_TEMPLATES.wendyActions[wendyCode];
   const wendyAction = randomPick(wendyActions);
-  
+
   // 3. 根据 Irene 人格选择对应的行为描述
   const ireneActions = STORY_TEMPLATES.ireneActions[ireneCode];
   const ireneAction = randomPick(ireneActions);
-  
+
   // 4. 随机选择孩子的反应
   const childReaction = randomPick(STORY_TEMPLATES.childReactions);
-  
+
   // 5. 随机选择结尾
   const ending = randomPick(STORY_TEMPLATES.endings);
-  
+
   // 6. 组合成完整文本（用换行符分隔段落）
-  return [
-    opening,
-    wendyAction,
-    ireneAction,
-    childReaction,
-    ending
-  ].join('\n\n');
+  return [opening, wendyAction, ireneAction, childReaction, ending].join('\n\n');
 };
 
 /**
@@ -58,14 +52,14 @@ export const generateStory = (wendyCode: WendyCode, ireneCode: IreneCode): strin
 export const generateMultipleStories = (
   wendyCode: WendyCode,
   ireneCode: IreneCode,
-  count: number = 3
+  count: number = 3,
 ): string[] => {
   const stories: string[] = [];
-  
+
   for (let i = 0; i < count; i++) {
     stories.push(generateStory(wendyCode, ireneCode));
   }
-  
+
   return stories;
 };
 
@@ -81,6 +75,6 @@ export const previewTemplates = (wendyCode: WendyCode, ireneCode: IreneCode) => 
     wendyActions: STORY_TEMPLATES.wendyActions[wendyCode],
     ireneActions: STORY_TEMPLATES.ireneActions[ireneCode],
     childReactions: STORY_TEMPLATES.childReactions,
-    endings: STORY_TEMPLATES.endings
+    endings: STORY_TEMPLATES.endings,
   };
 };

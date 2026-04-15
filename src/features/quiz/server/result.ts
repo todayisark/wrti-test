@@ -15,18 +15,18 @@ import type { QuizResult, QuizOption, WendyCode, IreneCode } from '../types';
  */
 const findOptionsByIds = (optionIds: string[]): QuizOption[] => {
   const options: QuizOption[] = [];
-  
+
   for (const optionId of optionIds) {
     // 遍历所有题目，找到包含该选项的题目
     for (const question of QUESTIONS) {
-      const option = question.options.find(opt => opt.id === optionId);
+      const option = question.options.find((opt) => opt.id === optionId);
       if (option) {
         options.push(option);
         break; // 找到后跳出内层循环
       }
     }
   }
-  
+
   return options;
 };
 
@@ -40,28 +40,28 @@ export const validateAnswers = (optionIds: string[]): { valid: boolean; message?
   if (optionIds.length !== 24) {
     return {
       valid: false,
-      message: `答案数量不正确，期望 24 个，实际收到 ${optionIds.length} 个`
+      message: `答案数量不正确，期望 24 个，实际收到 ${optionIds.length} 个`,
     };
   }
-  
+
   // 2. 检查是否有重复答案
   const uniqueIds = new Set(optionIds);
   if (uniqueIds.size !== optionIds.length) {
     return {
       valid: false,
-      message: '检测到重复的答案'
+      message: '检测到重复的答案',
     };
   }
-  
+
   // 3. 检查每个选项 ID 是否有效
   const validOptions = findOptionsByIds(optionIds);
   if (validOptions.length !== optionIds.length) {
     return {
       valid: false,
-      message: '存在无效的选项 ID'
+      message: '存在无效的选项 ID',
     };
   }
-  
+
   return { valid: true };
 };
 
@@ -76,36 +76,36 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
   if (!validation.valid) {
     throw new Error(validation.message);
   }
-  
+
   // 2. 获取选项对象
   const selectedOptions = findOptionsByIds(optionIds);
-  
+
   // 3. 计算分数
   const scoreMap = calculateScores(selectedOptions);
-  
+
   // 4. 确定最终人格
   const [wendyCode, ireneCode] = getFinalCharacters(scoreMap);
-  
+
   // 5. 获取人格卡片信息
   const wendyCard = CHARACTER_CARDS[wendyCode];
   const ireneCard = CHARACTER_CARDS[ireneCode];
-  
+
   // 6. 生成小剧场
   const story = generateStory(wendyCode, ireneCode);
-  
+
   // 7. 生成结果标题和摘要
   const resultTitle = `你是「${wendyCard.title} × ${ireneCard.title}」的孩子`;
   const resultSummary = `${wendyCard.name}的${wendyCard.personalityTraits[0]}遇上${ireneCard.name}的${ireneCard.personalityTraits[0]}，你会是一个怎样的孩子呢？`;
-  
+
   // 8. 构建返回结果
   const result: QuizResult = {
     wendyType: wendyCard,
     ireneType: ireneCard,
     resultTitle,
     resultSummary,
-    story
+    story,
   };
-  
+
   return result;
 };
 
@@ -118,7 +118,7 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
 export const getCharacterCards = (wendyCode: WendyCode, ireneCode: IreneCode) => {
   return {
     wendy: CHARACTER_CARDS[wendyCode],
-    irene: CHARACTER_CARDS[ireneCode]
+    irene: CHARACTER_CARDS[ireneCode],
   };
 };
 
