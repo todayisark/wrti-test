@@ -24,7 +24,7 @@ export type CharacterGroup = 'wendy' | 'irene';
  * 父母人格卡片
  * 定义每个人格的完整信息
  */
-export interface ParentCharacterCard {
+export type ParentCharacterCard = {
   /** 人格代码 */
   code: CharacterCode;
   /** 所属分组 */
@@ -43,53 +43,53 @@ export interface ParentCharacterCard {
   detailedDescription: string;
   /** 表情符号 */
   emoji?: string;
-}
+};
 
 // ==================== 题目系统 ====================
 
 /**
  * 计分规则
  */
-export interface ScoreRule {
+export type ScoreRule = {
   /** 人格代码 */
   code: CharacterCode;
   /** 分数（主人格 +2，次人格 +1） */
   score: number;
-}
+};
 
 /**
  * 题目选项
  */
-export interface QuizOption {
+export type QuizOption = {
   /** 选项 ID */
   id: string;
   /** 选项文本 */
   text: string;
   /** 计分规则数组 */
   scoreRules: ScoreRule[];
-}
+};
 
 /**
  * 测试题目
  */
-export interface QuizQuestion {
+export type QuizQuestion = {
   /** 题目 ID */
   id: string;
   /** 题目文本 */
   prompt: string;
   /** 选项列表（每题 4 个选项） */
   options: QuizOption[];
-}
+};
 
 /**
  * 用户答案
  */
-export interface QuizAnswer {
+export type QuizAnswer = {
   /** 题目 ID */
   questionId: string;
   /** 选中的选项 ID */
   optionId: string;
-}
+};
 
 // ==================== 计分系统 ====================
 
@@ -106,19 +106,19 @@ export type IreneScoreMap = Record<IreneCode, number>;
 /**
  * 完整分数映射
  */
-export interface ScoreMap {
+export type ScoreMap = {
   /** Wendy 四种人格的分数 */
   wendy: WendyScoreMap;
   /** Irene 四种人格的分数 */
   irene: IreneScoreMap;
-}
+};
 
 // ==================== 测试结果 ====================
 
 /**
  * 测试结果
  */
-export interface QuizResult {
+export type QuizResult = {
   /** Wendy 判定的人格类型 */
   wendyType: ParentCharacterCard;
   /** Irene 判定的人格类型 */
@@ -131,14 +131,14 @@ export interface QuizResult {
   story: string;
   /** 孩子标签（如："暖慢宝"） */
   childLabel?: string;
-}
+};
 
 // ==================== 小剧场模板 ====================
 
 /**
  * 小剧场句子池
  */
-export interface StoryTemplate {
+export type StoryTemplate = {
   /** 开场白句子池 */
   opening: string[];
   /** Wendy 行动句子池（按人格分类） */
@@ -149,4 +149,4 @@ export interface StoryTemplate {
   childReactions: string[];
   /** 结尾句子池 */
   endings: string[];
-}
+};
