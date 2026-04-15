@@ -187,6 +187,44 @@ const HomePage = () => {
             v1.0.0 MVP · 无需登录 · 结果仅本地保存
           </Typography>
         </Box>
+
+        {/* 作者链接 */}
+        <Box sx={{ mt: 6, textAlign: 'center' }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
+            联系作者
+          </Typography>
+          <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
+            <Typography
+              component="a"
+              href="https://github.com/todayisark"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#3b82f6',
+                textDecoration: 'none',
+                fontWeight: 600,
+                '&:hover': { textDecoration: 'underline' },
+              }}
+            >
+              GitHub
+            </Typography>
+            <Typography sx={{ color: 'text.disabled' }}>·</Typography>
+            <Typography
+              component="a"
+              href="https://xhslink.com/m/8w8Vj7p3TWK"
+              target="_blank"
+              rel="noopener noreferrer"
+              sx={{
+                color: '#ec4899',
+                textDecoration: 'none',
+                fontWeight: 600,
+                '&:hover': { textDecoration: 'underline' },
+              }}
+            >
+              小红书
+            </Typography>
+          </Box>
+        </Box>
       </Box>
     </Box>
   );
