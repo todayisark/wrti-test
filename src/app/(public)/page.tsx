@@ -5,22 +5,22 @@
  * 项目介绍和开始测试入口
  */
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const HomePage = () => {
   const router = useRouter();
-  const [hasResult, setHasResult] = useState(false);
-
-  useEffect(() => {
-    // 检查 localStorage 中是否有测试结果
-    const savedResult = localStorage.getItem('quizResult');
-    setHasResult(!!savedResult);
-  }, []);
+  // 使用函数式初始化，只在组件首次渲染时执行一次
+  const [hasResult, setHasResult] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return !!localStorage.getItem('quizResult');
+    }
+    return false;
+  });
 
   const handleStartQuiz = () => {
-    // 清除之前的测试结果
     localStorage.removeItem('quizResult');
+    setHasResult(false); // 同步更新状态
     router.push('/quiz');
   };
 
