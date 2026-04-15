@@ -16,9 +16,10 @@ import { ArrowForward, BarChart, ExpandMore, ExpandLess } from '@mui/icons-mater
 const getOrCreateUserUUID = (): string => {
   if (typeof window === 'undefined') return '';
   const key = 'wrti_user_uuid';
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   let uuid = localStorage.getItem(key);
-  if (!uuid) {
-    uuid = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+  if (!uuid || !uuidRegex.test(uuid)) {
+    uuid = crypto.randomUUID();
     localStorage.setItem(key, uuid);
   }
   return uuid;
