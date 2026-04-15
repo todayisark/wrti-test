@@ -102,7 +102,7 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
   }
 
   // 8. 生成结果标题和摘要
-  const resultTitle = `你是「${wendyCard.name} × ${ireneCard.name}」的孩子`;
+  const resultTitle = `你的性格特征是`;
   const resultSummary = `${childProfile.emoji} ${childProfile.label}`;
 
   // 9. 构建返回结果

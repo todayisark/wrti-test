@@ -7,7 +7,9 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Box, Typography, Button } from '@mui/material';
 import type { QuizResult } from '@/features/quiz/types';
+import { PersonalityCard } from '@/components/PersonalityCard';
 
 const ResultPage = () => {
   const router = useRouter();
@@ -47,12 +49,37 @@ const ResultPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-500 mx-auto mb-4" />
-          <p className="text-gray-600">加载中...</p>
-        </div>
-      </div>
+      <Box
+        sx={{
+          minHeight: '100vh',
+          background: 'linear-gradient(to bottom, #fce7f3, #dbeafe)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      >
+        <Box sx={{ textAlign: 'center' }}>
+          <Box
+            sx={{
+              width: 48,
+              height: 48,
+              border: '3px solid transparent',
+              borderTopColor: '#3b82f6',
+              borderRadius: '50%',
+              animation: 'spin 1s linear infinite',
+              mx: 'auto',
+              mb: 2,
+              '@keyframes spin': {
+                '0%': { transform: 'rotate(0deg)' },
+                '100%': { transform: 'rotate(360deg)' },
+              },
+            }}
+          />
+          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+            加载中...
+          </Typography>
+        </Box>
+      </Box>
     );
   }
 
@@ -61,165 +88,209 @@ const ResultPage = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <Box
+      sx={{
+        minHeight: '100vh',
+        background: 'linear-gradient(to bottom, #fce7f3, #dbeafe)',
+        py: { xs: 6, md: 12 },
+        px: { xs: 2, sm: 3 },
+      }}
+    >
+      <Box sx={{ maxWidth: 1200, mx: 'auto' }}>
         {/* 结果标题 */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold text-gray-800 mb-4">{result.resultTitle}</h1>
-          <p className="text-lg text-gray-600">{result.resultSummary}</p>
-        </div>
+        <Box sx={{ textAlign: 'center', mb: 8 }}>
+          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+            {result.resultTitle}
+          </Typography>
+          <Typography variant="h3" sx={{ fontWeight: 'bold', mb: 2 }}>
+            {result.resultSummary}
+          </Typography>
+        </Box>
 
         {/* 父母人格卡片 */}
-        <div className="grid md:grid-cols-2 gap-6 mb-12">
-          {/* Wendy 人格卡片 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-pink-400">
-            <div className="mb-3">
-              <p className="text-xs text-pink-600 font-semibold uppercase tracking-wide">
-                妈咪孙承完
-              </p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="text-4xl mr-3">{result.wendyType.emoji}</span>
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800">{result.wendyType.title}</h2>
-                <p className="text-sm text-gray-500">{result.wendyType.job}</p>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="font-semibold text-gray-700 mb-2">性格特质</h3>
-              <div className="flex flex-wrap gap-2">
-                {result.wendyType.personalityTraits.map((trait, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-pink-100 text-pink-700 rounded-full text-sm"
-                  >
-                    {trait}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="font-semibold text-gray-700 mb-2">性格摘要</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {result.wendyType.personalitySummary}
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-700 mb-2">详细描述</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {result.wendyType.detailedDescription}
-              </p>
-            </div>
-          </div>
-
-          {/* Irene 人格卡片 */}
-          <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-400">
-            <div className="mb-3">
-              <p className="text-xs text-purple-600 font-semibold uppercase tracking-wide">
-                妈妈裴柱现
-              </p>
-            </div>
-            <div className="flex items-center mb-4">
-              <span className="text-4xl mr-3">{result.ireneType.emoji}</span>
-              <div>
-                <h2 className="text-2xl font-bold text-gray-800">{result.ireneType.title}</h2>
-                <p className="text-sm text-gray-500">{result.ireneType.job}</p>
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="font-semibold text-gray-700 mb-2">性格特质</h3>
-              <div className="flex flex-wrap gap-2">
-                {result.ireneType.personalityTraits.map((trait, index) => (
-                  <span
-                    key={index}
-                    className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm"
-                  >
-                    {trait}
-                  </span>
-                ))}
-              </div>
-            </div>
-
-            <div className="mb-4">
-              <h3 className="font-semibold text-gray-700 mb-2">性格摘要</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {result.ireneType.personalitySummary}
-              </p>
-            </div>
-
-            <div>
-              <h3 className="font-semibold text-gray-700 mb-2">详细描述</h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {result.ireneType.detailedDescription}
-              </p>
-            </div>
-          </div>
-        </div>
+        <Box
+          sx={{
+            display: 'grid',
+            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+            gap: 3,
+            mb: 8,
+          }}
+        >
+          <PersonalityCard
+            character={result.wendyType}
+            label="你的妈咪孙承完是"
+            primaryColor="#3b82f6"
+            lightColor="#dbeafe"
+            darkColor="#1e40af"
+          />
+          <PersonalityCard
+            character={result.ireneType}
+            label="你的妈妈裴柱现是"
+            primaryColor="#ec4899"
+            lightColor="#fce7f3"
+            darkColor="#be185d"
+          />
+        </Box>
 
         {/* 孩子人格卡片 */}
-        <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl shadow-lg p-8 mb-12 text-white">
-          <div className="text-center mb-6">
-            <div className="text-5xl mb-3">{result.childProfile.emoji}</div>
-            <h2 className="text-3xl font-bold mb-2">{result.childProfile.label}</h2>
-            <p className="text-pink-100">特别的你</p>
-          </div>
+        <Box
+          sx={{
+            background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+            borderRadius: 3,
+            p: { xs: 4, md: 6 },
+            mb: 8,
+            boxShadow: 4,
+            color: 'white',
+          }}
+        >
+          <Box sx={{ textAlign: 'center', mb: 4 }}>
+            <Typography variant="h2" sx={{ mb: 1.5 }}>
+              {result.childProfile.emoji}
+            </Typography>
+            <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
+              {result.childProfile.label}
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)' }}>
+              特别的你
+            </Typography>
+          </Box>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
-            <h3 className="font-semibold text-xl mb-3 flex items-center">
-              <span className="mr-2">✨</span>
+          <Box
+            sx={{
+              bgcolor: 'rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: 2,
+              p: 3,
+              mb: 3,
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
+            >
+              <Box component="span" sx={{ mr: 1 }}>
+                ✨
+              </Box>
               你的性格
-            </h3>
-            <p className="text-white/90 leading-relaxed">{result.childProfile.personality}</p>
-          </div>
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
+              {result.childProfile.personality}
+            </Typography>
+          </Box>
 
-          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
-            <h3 className="font-semibold text-xl mb-3 flex items-center">
-              <span className="mr-2">💝</span>
+          <Box
+            sx={{
+              bgcolor: 'rgba(255,255,255,0.1)',
+              backdropFilter: 'blur(10px)',
+              borderRadius: 2,
+              p: 3,
+            }}
+          >
+            <Typography
+              variant="h6"
+              sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
+            >
+              <Box component="span" sx={{ mr: 1 }}>
+                💝
+              </Box>
               她们会怎么爱你
-            </h3>
-            <p className="text-white/90 leading-relaxed">{result.childProfile.parentingStyle}</p>
-          </div>
-        </div>
+            </Typography>
+            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
+              {result.childProfile.parentingStyle}
+            </Typography>
+          </Box>
+        </Box>
 
         {/* 小剧场 */}
-        <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">一家三口的日常</h2>
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-relaxed whitespace-pre-line">{result.story}</p>
-          </div>
-        </div>
+        <Box
+          sx={{
+            bgcolor: 'white',
+            borderRadius: 3,
+            p: { xs: 4, md: 6 },
+            mb: 6,
+            boxShadow: 3,
+          }}
+        >
+          <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', mb: 4 }}>
+            一家三口的日常
+          </Typography>
+          <Typography
+            variant="body1"
+            sx={{ color: 'text.primary', lineHeight: 1.8, whiteSpace: 'pre-line' }}
+          >
+            {result.story}
+          </Typography>
+        </Box>
 
         {/* 操作按钮 */}
-        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <button
+        <Box
+          sx={{
+            display: 'flex',
+            flexDirection: { xs: 'column', sm: 'row' },
+            gap: 2,
+            justifyContent: 'center',
+            mb: 4,
+          }}
+        >
+          <Button
             onClick={handleRetry}
-            className="px-8 py-3 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-semibold rounded-lg shadow-lg hover:from-pink-600 hover:to-purple-600 transition-all"
+            sx={{
+              px: 4,
+              py: 1.5,
+              background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+              color: 'white',
+              fontWeight: 600,
+              borderRadius: 2,
+              boxShadow: 3,
+              textTransform: 'none',
+              '&:hover': {
+                background: 'linear-gradient(to right, #db2777, #2563eb)',
+                boxShadow: 4,
+              },
+            }}
           >
             重新测试
-          </button>
-          <button
+          </Button>
+          <Button
             onClick={handleShare}
-            className="px-8 py-3 bg-white text-gray-700 font-semibold rounded-lg shadow-lg border-2 border-gray-300 hover:border-purple-400 transition-all"
+            sx={{
+              px: 4,
+              py: 1.5,
+              bgcolor: 'white',
+              color: 'text.primary',
+              fontWeight: 600,
+              borderRadius: 2,
+              boxShadow: 3,
+              border: '2px solid #e5e7eb',
+              textTransform: 'none',
+              '&:hover': {
+                bgcolor: 'white',
+                borderColor: '#3b82f6',
+              },
+            }}
           >
             分享结果
-          </button>
-        </div>
+          </Button>
+        </Box>
 
         {/* 返回首页链接 */}
-        <div className="text-center mt-8">
-          <button
+        <Box sx={{ textAlign: 'center' }}>
+          <Button
             onClick={() => router.push('/')}
-            className="text-gray-500 hover:text-purple-600 transition-colors"
+            sx={{
+              color: 'text.secondary',
+              textTransform: 'none',
+              '&:hover': {
+                color: '#3b82f6',
+                bgcolor: 'transparent',
+              },
+            }}
           >
             返回首页
-          </button>
-        </div>
-      </div>
-    </div>
+          </Button>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 

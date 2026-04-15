@@ -29,20 +29,14 @@ export type ParentCharacterCard = {
   code: CharacterCode;
   /** 所属分组 */
   group: CharacterGroup;
-  /** 人格名称 */
-  name: string;
-  /** 人格标题（职业） */
-  title: string;
+  /** 表情符号 */
+  emoji: string;
   /** 职业描述 */
   job: string;
-  /** 性格摘要 */
-  personalitySummary: string;
   /** 性格特质列表 */
-  personalityTraits: string[];
-  /** 详细描述 */
-  detailedDescription: string;
-  /** 表情符号 */
-  emoji?: string;
+  tags: string[];
+  /** 人格故事描述 */
+  story: string;
 };
 
 /**
@@ -149,7 +143,7 @@ export type QuizResult = {
   ireneType: ParentCharacterCard;
   /** 孩子人格信息 */
   childProfile: ChildProfile;
-  /** 结果标题（如："你是「小太阳DJ × 花店老板 的孩子」"） */
+  /** 结果标题 */
   resultTitle: string;
   /** 结果摘要 */
   resultSummary: string;
