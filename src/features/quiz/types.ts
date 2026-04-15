@@ -150,3 +150,32 @@ export type StoryTemplate = {
   /** 结尾句子池 */
   endings: string[];
 };
+
+// ==================== API 响应类型 ====================
+
+/**
+ * 成功响应
+ */
+export type SuccessResponse<T = unknown> = {
+  success: true;
+  data: T;
+};
+
+/**
+ * 错误响应
+ */
+export type ErrorResponse = {
+  success: false;
+  error: string;
+  details?: unknown;
+};
+
+/**
+ * 通用 API 响应
+ */
+export type ApiResponse<T = unknown> = SuccessResponse<T> | ErrorResponse;
+
+/**
+ * 测试提交响应
+ */
+export type QuizSubmitResponse = ApiResponse<QuizResult>;
