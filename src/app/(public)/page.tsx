@@ -5,15 +5,27 @@
  * 项目介绍和开始测试入口
  */
 
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 const HomePage = () => {
   const router = useRouter();
+  const [hasResult, setHasResult] = useState(false);
+
+  useEffect(() => {
+    // 检查 localStorage 中是否有测试结果
+    const savedResult = localStorage.getItem('quizResult');
+    setHasResult(!!savedResult);
+  }, []);
 
   const handleStartQuiz = () => {
     // 清除之前的测试结果
-    sessionStorage.removeItem('quizResult');
+    localStorage.removeItem('quizResult');
     router.push('/quiz');
+  };
+
+  const handleViewResult = () => {
+    router.push('/result');
   };
 
   return (
@@ -65,14 +77,24 @@ const HomePage = () => {
         </div>
       </div>
 
-      {/* 开始按钮 */}
+      {/* 按钮区域 */}
       <div className="text-center">
-        <button
-          onClick={handleStartQuiz}
-          className="px-12 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-lg font-semibold rounded-full shadow-xl hover:from-pink-600 hover:to-purple-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
-        >
-          开始测试 →
-        </button>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+          <button
+            onClick={handleStartQuiz}
+            className="px-12 py-4 bg-gradient-to-r from-pink-500 to-purple-500 text-white text-lg font-semibold rounded-full shadow-xl hover:from-pink-600 hover:to-purple-600 hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
+          >
+            开始测试 →
+          </button>
+          {hasResult && (
+            <button
+              onClick={handleViewResult}
+              className="px-12 py-4 bg-white text-purple-600 text-lg font-semibold rounded-full shadow-xl border-2 border-purple-400 hover:bg-purple-50 hover:shadow-2xl transform hover:scale-105 transition-all duration-200"
+            >
+              查看结果 📊
+            </button>
+          )}
+        </div>
       </div>
 
       {/* 示例人格展示 */}

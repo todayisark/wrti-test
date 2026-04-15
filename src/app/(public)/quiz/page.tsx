@@ -56,8 +56,8 @@ const QuizPage = () => {
         throw new Error(result.success ? '' : result.error || '提交失败');
       }
 
-      // 将结果存到 sessionStorage
-      sessionStorage.setItem('quizResult', JSON.stringify(result.data));
+      // 将结果存到 localStorage
+      localStorage.setItem('quizResult', JSON.stringify(result.data));
 
       // 跳转到结果页
       router.push('/result');

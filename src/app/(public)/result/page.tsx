@@ -2,7 +2,7 @@
 
 /**
  * 结果展示页面
- * 从 sessionStorage 读取测试结果并展示
+ * 从 localStorage 读取测试结果并展示
  */
 
 import { useEffect, useState } from 'react';
@@ -15,8 +15,8 @@ const ResultPage = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // 从 sessionStorage 读取结果
-    const savedResult = sessionStorage.getItem('quizResult');
+    // 从 localStorage 读取结果
+    const savedResult = localStorage.getItem('quizResult');
 
     if (!savedResult) {
       // 如果没有结果，重定向到首页
@@ -36,7 +36,7 @@ const ResultPage = () => {
   }, [router]);
 
   const handleRetry = () => {
-    sessionStorage.removeItem('quizResult');
+    localStorage.removeItem('quizResult');
     router.push('/quiz');
   };
 
