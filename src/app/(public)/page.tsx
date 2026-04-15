@@ -6,15 +6,30 @@
  */
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Box, Typography, Button, Collapse, IconButton } from '@mui/material';
 import { ArrowForward, BarChart, ExpandMore, ExpandLess } from '@mui/icons-material';
 import changelogData from '@/features/quiz/data/changelog.json';
+import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
+import homeZhCN from '@/i18n/dictionaries/home/zh-CN.json';
+import homeEnUS from '@/i18n/dictionaries/home/en-US.json';
 
 type ChangelogItem = {
   version: string;
   date: string;
   content: string;
+};
+
+type HomeDictionary = typeof homeZhCN;
+
+const dictionaries: Record<Locale, HomeDictionary> = {
+  'zh-CN': homeZhCN,
+  'en-US': homeEnUS,
+};
+
+const getLocaleFromPathname = (pathname: string): Locale => {
+  const segment = pathname.split('/')[1] || '';
+  return hasLocale(segment) ? segment : defaultLocale;
 };
 
 /**
@@ -34,6 +49,9 @@ const getOrCreateUserUUID = (): string => {
 
 const HomePage = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = getLocaleFromPathname(pathname);
+  const dict = dictionaries[currentLocale];
   const changelog = changelogData as ChangelogItem[];
   const latestLog = changelog[0];
   const historyLogs = changelog.slice(1);
@@ -54,11 +72,16 @@ const HomePage = () => {
   const handleStartQuiz = () => {
     localStorage.removeItem('quizResult');
     setHasResult(false); // 同步更新状态
-    router.push('/quiz');
+    router.push(`/${currentLocale}/quiz`);
   };
 
   const handleViewResult = () => {
-    router.push('/result');
+    router.push(`/${currentLocale}/result`);
+  };
+
+  const handleSwitchLanguage = (locale: Locale) => {
+    if (locale === currentLocale) return;
+    router.push(`/${locale}`);
   };
 
   return (
@@ -70,13 +93,64 @@ const HomePage = () => {
       }}
     >
       <Box sx={{ maxWidth: 900, mx: 'auto', px: { xs: 2, sm: 3 }, py: 8 }}>
+        {/* 语言切换 */}
+        <Box sx={{ display: 'flex', justifyContent: 'flex-end', mb: 3 }}>
+          <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 0.75 }}>
+            <Box
+              sx={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 1,
+                px: 1.5,
+                py: 1,
+                borderRadius: '9999px',
+                bgcolor: 'white',
+                boxShadow: 2,
+              }}
+            >
+              <Typography variant="caption" sx={{ color: 'text.secondary', mr: 0.5 }}>
+                {dict.language.label}
+              </Typography>
+              <Button
+                size="small"
+                variant={currentLocale === 'zh-CN' ? 'contained' : 'text'}
+                onClick={() => handleSwitchLanguage('zh-CN')}
+                sx={{
+                  minWidth: 64,
+                  borderRadius: '9999px',
+                  textTransform: 'none',
+                  fontWeight: 600,
+                }}
+              >
+                {dict.language.zhCN}
+              </Button>
+              <Button
+                size="small"
+                variant={currentLocale === 'en-US' ? 'contained' : 'text'}
+                onClick={() => handleSwitchLanguage('en-US')}
+                sx={{
+                  minWidth: 64,
+                  borderRadius: '9999px',
+                  textTransform: 'none',
+                  fontWeight: 600,
+                }}
+              >
+                {dict.language.enUS}
+              </Button>
+            </Box>
+            <Typography variant="caption" sx={{ color: 'text.disabled' }}>
+              {dict.language.aiNote}
+            </Typography>
+          </Box>
+        </Box>
+
         {/* 主标题区域 */}
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
-            测一测你是哪种
+            {dict.hero.titleLine1}
           </Typography>
           <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
-            「她们的孩子」
+            {dict.hero.titleLine2}
           </Typography>
           {/* <Typography
             variant="h2"
@@ -100,15 +174,15 @@ const HomePage = () => {
             WRTI
           </Typography> */}
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            探索你是哪种{' '}
+            {dict.hero.subtitlePrefix}{' '}
             <Box component="span" sx={{ color: '#3b82f6', fontWeight: 600 }}>
-              孙承完
+              {dict.hero.wendyName}
             </Box>{' '}
             ×{' '}
             <Box component="span" sx={{ color: '#ec4899', fontWeight: 600 }}>
-              裴柱现
+              {dict.hero.ireneName}
             </Box>{' '}
-            的孩子
+            {dict.hero.subtitleSuffix}
           </Typography>
         </Box>
 
@@ -123,44 +197,37 @@ const HomePage = () => {
           }}
         >
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-            在不同的世界线里，
+            {dict.intro.line1Prefix}
             <Box component="span" sx={{ color: '#3b82f6', fontWeight: 600 }}>
-              孙承完
+              {dict.hero.wendyName}
             </Box>{' '}
             和{' '}
             <Box component="span" sx={{ color: '#ec4899', fontWeight: 600 }}>
-              裴柱现
+              {dict.hero.ireneName}
             </Box>{' '}
-            会以不同的样子相遇。
+            {dict.intro.line1Suffix}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-            她们的性格不同，职业不同，爱你的方式也不一样。
+            {dict.intro.line2}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 2 }}>
-            有的家庭温柔而安静，有的克制而深沉，有的明亮到让人离不开。
+            {dict.intro.line3}
           </Typography>
           <Typography variant="body1" color="text.secondary" sx={{ mb: 3 }}>
-            而你，会在这样的家庭里长大，慢慢成为独一无二的那一个。
+            {dict.intro.line4}
           </Typography>
 
           {/* 分割线 */}
           <Box sx={{ borderTop: 1, borderColor: 'divider', pt: 3, mt: 3 }}>
             <Typography variant="body1" sx={{ fontWeight: 600, mb: 2 }}>
-              测试说明
+              {dict.instructions.title}
             </Typography>
             <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1 }}>
-              <Typography variant="body2" color="text.secondary">
-                • 共 24 道题目，需要全部完成
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                • 每道题请选择最符合你的选项
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                • 预计用时 5-8 分钟
-              </Typography>
-              <Typography variant="body2" color="text.secondary">
-                • 完成后将获得你的专属人格组合和一个温馨的一家三口小剧场
-              </Typography>
+              {dict.instructions.items.map((item) => (
+                <Typography key={item} variant="body2" color="text.secondary">
+                  • {item}
+                </Typography>
+              ))}
             </Box>
           </Box>
         </Box>
@@ -196,7 +263,7 @@ const HomePage = () => {
               transition: 'all 0.2s',
             }}
           >
-            开始测试
+            {dict.actions.startQuiz}
           </Button>
           {hasResult && (
             <Button
@@ -225,7 +292,7 @@ const HomePage = () => {
                 transition: 'all 0.2s',
               }}
             >
-              查看结果
+              {dict.actions.viewResult}
             </Button>
           )}
         </Box>
@@ -277,7 +344,7 @@ const HomePage = () => {
               <Collapse in={expandLog && historyLogs.length > 0}>
                 <Box sx={{ mt: 3, pt: 3, borderTop: '1px solid #e5e7eb' }}>
                   <Typography variant="body2" sx={{ fontWeight: 600, mb: 2 }}>
-                    更新历史
+                    {dict.changelog.historyTitle}
                   </Typography>
                   <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
                     {historyLogs.map((item) => (
@@ -302,7 +369,7 @@ const HomePage = () => {
             </>
           ) : (
             <Typography variant="body2" color="text.secondary">
-              暂无更新日志
+              {dict.changelog.empty}
             </Typography>
           )}
         </Box>
@@ -310,17 +377,17 @@ const HomePage = () => {
         {/* 页脚说明 */}
         <Box sx={{ mt: 8, textAlign: 'center' }}>
           <Typography variant="body2" color="text.secondary">
-            本测试仅供娱乐，所有人格特质均为虚构设定
+            {dict.footer.disclaimer}
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            {latestLog?.version || 'v1.0.0'} MVP · 无需登录 · 结果仅本地保存
+            {`${latestLog?.version || 'v1.0.0'} ${dict.footer.metaSuffix}`}
           </Typography>
         </Box>
 
         {/* 作者链接 */}
         <Box sx={{ mt: 6, textAlign: 'center' }}>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            联系作者
+            {dict.footer.contact}
           </Typography>
           <Box sx={{ display: 'flex', justifyContent: 'center', gap: 2, flexWrap: 'wrap' }}>
             <Typography

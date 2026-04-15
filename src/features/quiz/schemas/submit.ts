@@ -3,6 +3,7 @@
  */
 
 import { z } from 'zod';
+import { locales } from '@/i18n/config';
 
 /**
  * 单个答案的 Schema
@@ -27,6 +28,7 @@ export const QuizSubmitSchema = z.object({
 export const QuizSubmitSimpleSchema = z.object({
   optionIds: z.array(z.string()).length(24, { message: '必须提供 24 个选项 ID' }),
   userUUID: z.string().optional(),
+  locale: z.enum(locales).optional(),
 });
 
 /**

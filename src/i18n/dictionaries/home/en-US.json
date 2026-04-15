@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "titleLine1": "Find out what kind of",
+    "titleLine2": "\"their child\" you are",
+    "subtitlePrefix": "Discover which child of",
+    "subtitleSuffix": "you are",
+    "wendyName": "Shon Seung-wan",
+    "ireneName": "Bae Ju-hyeon"
+  },
+  "intro": {
+    "line1Prefix": "Across different timelines,",
+    "line1Suffix": "meet in different ways.",
+    "line2": "Their personalities and careers differ, and so does the way they love you.",
+    "line3": "Some families are gentle and quiet, some restrained and deep, some bright and impossible to leave.",
+    "line4": "And you will grow up in that family, becoming uniquely yourself."
+  },
+  "instructions": {
+    "title": "How it works",
+    "items": [
+      "24 questions in total, all are required",
+      "Choose the option that best matches you for each question",
+      "Estimated time: 5-8 minutes",
+      "You will get your exclusive personality combination and a warm three-person story"
+    ]
+  },
+  "actions": {
+    "startQuiz": "Start Quiz",
+    "viewResult": "View Result"
+  },
+  "changelog": {
+    "historyTitle": "History",
+    "empty": "No changelog entries yet"
+  },
+  "footer": {
+    "disclaimer": "This test is for entertainment only. All personality settings are fictional.",
+    "metaSuffix": "MVP · No login required · Result saved locally only",
+    "contact": "Contact"
+  },
+  "language": {
+    "label": "Language",
+    "zhCN": "中文",
+    "enUS": "English",
+    "aiNote": "AI-translated. Feedback is welcome."
+  }
+}

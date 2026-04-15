@@ -1,0 +1,45 @@
+{
+  "hero": {
+    "titleLine1": "测一测你是哪种",
+    "titleLine2": "「她们的孩子」",
+    "subtitlePrefix": "探索你是哪种",
+    "subtitleSuffix": "的孩子",
+    "wendyName": "孙承完",
+    "ireneName": "裴柱现"
+  },
+  "intro": {
+    "line1Prefix": "在不同的世界线里，",
+    "line1Suffix": "会以不同的样子相遇。",
+    "line2": "她们的性格不同，职业不同，爱你的方式也不一样。",
+    "line3": "有的家庭温柔而安静，有的克制而深沉，有的明亮到让人离不开。",
+    "line4": "而你，会在这样的家庭里长大，慢慢成为独一无二的那一个。"
+  },
+  "instructions": {
+    "title": "测试说明",
+    "items": [
+      "共 24 道题目，需要全部完成",
+      "每道题请选择最符合你的选项",
+      "预计用时 5-8 分钟",
+      "完成后将获得你的专属人格组合和一个温馨的一家三口小剧场"
+    ]
+  },
+  "actions": {
+    "startQuiz": "开始测试",
+    "viewResult": "查看结果"
+  },
+  "changelog": {
+    "historyTitle": "更新历史",
+    "empty": "暂无更新日志"
+  },
+  "footer": {
+    "disclaimer": "本测试仅供娱乐，所有人格特质均为虚构设定",
+    "metaSuffix": "MVP · 无需登录 · 结果仅本地保存",
+    "contact": "联系作者"
+  },
+  "language": {
+    "label": "语言",
+    "zhCN": "中文",
+    "enUS": "English",
+    "aiNote": ""
+  }
+}

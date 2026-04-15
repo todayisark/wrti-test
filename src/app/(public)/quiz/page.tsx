@@ -6,10 +6,38 @@
  */
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Box, Typography, Button } from '@mui/material';
 import { QUESTIONS } from '@/features/quiz/constants';
 import type { QuizSubmitResponse } from '@/features/quiz/types';
+import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
+import quizZhCN from '@/i18n/dictionaries/quiz/zh-CN.json';
+import quizEnUS from '@/i18n/dictionaries/quiz/en-US.json';
+import questionsEnUS from '@/features/quiz/data/questions.en-US.json';
+
+type QuizDictionary = typeof quizZhCN;
+type LocalizedQuestion = (typeof QUESTIONS)[number];
+
+const quizDictionaries: Record<Locale, QuizDictionary> = {
+  'zh-CN': quizZhCN,
+  'en-US': quizEnUS,
+};
+
+const localizedQuestions: Record<Locale, LocalizedQuestion[]> = {
+  'zh-CN': QUESTIONS,
+  'en-US': questionsEnUS as LocalizedQuestion[],
+};
+
+const getLocaleFromPathname = (pathname: string): Locale => {
+  const segment = pathname.split('/')[1] || '';
+  return hasLocale(segment) ? segment : defaultLocale;
+};
+
+const formatMessage = (template: string, params: Record<string, string | number>) => {
+  return Object.entries(params).reduce((result, [key, value]) => {
+    return result.replaceAll(`{${key}}`, String(value));
+  }, template);
+};
 
 const getOrCreateUserUUID = (): string => {
   const key = 'wrti_user_uuid';
@@ -27,6 +55,10 @@ const getOrCreateUserUUID = (): string => {
 
 const QuizPage = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = getLocaleFromPathname(pathname);
+  const dict = quizDictionaries[currentLocale];
+  const questions = localizedQuestions[currentLocale];
   const [answers, setAnswers] = useState<Record<string, string>>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -45,7 +77,7 @@ const QuizPage = () => {
   // 提交答案
   const handleSubmit = async () => {
     if (!isComplete) {
-      setError('请回答全部 24 道题');
+      setError(formatMessage(dict.errors.incompleteAnswers, { total: 24 }));
       return;
     }
 
@@ -54,7 +86,7 @@ const QuizPage = () => {
 
     try {
       // 构造 optionIds 数组
-      const optionIds = QUESTIONS.map((q) => answers[q.id]);
+      const optionIds = questions.map((q) => answers[q.id]);
 
       // 获取用户 UUID
       const userUUID = getOrCreateUserUUID();
@@ -65,7 +97,7 @@ const QuizPage = () => {
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ optionIds, userUUID }),
+        body: JSON.stringify({ optionIds, userUUID, locale: currentLocale }),
       });
 
       const result: QuizSubmitResponse = await response.json();
@@ -78,9 +110,9 @@ const QuizPage = () => {
       localStorage.setItem('quizResult', JSON.stringify(result.data));
 
       // 跳转到结果页
-      router.push('/result');
+      router.push(`/${currentLocale}/result`);
     } catch (err) {
-      setError(err instanceof Error ? err.message : '提交失败，请重试');
+      setError(err instanceof Error ? err.message : dict.errors.submitRetry);
       setIsSubmitting(false);
     }
   };
@@ -110,7 +142,10 @@ const QuizPage = () => {
       >
         <Box sx={{ maxWidth: 900, mx: 'auto' }}>
           <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1, textAlign: 'center' }}>
-            已完成 {Object.keys(answers).length} / 24
+            {formatMessage(dict.page.progress, {
+              completed: Object.keys(answers).length,
+              total: 24,
+            })}
           </Typography>
           <Box
             sx={{
@@ -138,16 +173,16 @@ const QuizPage = () => {
         {/* 页面标题 */}
         <Box sx={{ textAlign: 'center', mb: 6 }}>
           <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
-            「她们的孩子」人格测试
+            {dict.page.title}
           </Typography>
           <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-            共 24 道题
+            {formatMessage(dict.page.totalQuestions, { total: 24 })}
           </Typography>
         </Box>
 
         {/* 题目列表 */}
         <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-          {QUESTIONS.map((question, index) => {
+          {questions.map((question, index) => {
             const isAnswered = !!answers[question.id];
             return (
               <Box
@@ -287,7 +322,11 @@ const QuizPage = () => {
                 },
               }}
             >
-              {isSubmitting ? '提交中...' : isComplete ? '查看结果' : '请完成全部题目'}
+              {isSubmitting
+                ? dict.actions.submitting
+                : isComplete
+                  ? dict.actions.viewResult
+                  : dict.actions.completeAll}
             </Button>
           </Box>
         </Box>

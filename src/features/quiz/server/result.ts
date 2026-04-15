@@ -7,6 +7,20 @@ import { QUESTIONS, CHARACTER_CARDS, CHILD_PROFILES } from '../constants';
 import { calculateScores, getFinalCharactersWithTiebreak } from './scoring';
 import { generateStory } from './story';
 import type { QuizResult, QuizOption, WendyCode, IreneCode, ChildCombinationKey } from '../types';
+import type { Locale } from '@/i18n/config';
+import charactersEnUS from '../data/characters.en-US.json';
+import childrenEnUS from '../data/children.en-US.json';
+
+const CHARACTER_CARDS_EN_US = charactersEnUS as typeof CHARACTER_CARDS;
+const CHILD_PROFILES_EN_US = childrenEnUS as typeof CHILD_PROFILES;
+
+const getCharacterCardsByLocale = (locale: Locale) => {
+  return locale === 'en-US' ? CHARACTER_CARDS_EN_US : CHARACTER_CARDS;
+};
+
+const getChildProfilesByLocale = (locale: Locale) => {
+  return locale === 'en-US' ? CHILD_PROFILES_EN_US : CHILD_PROFILES;
+};
 
 /**
  * 根据选项 ID 数组查找对应的选项对象
@@ -115,6 +129,60 @@ export const calculateResult = (optionIds: string[], userUUID?: string): QuizRes
     resultTitle,
     resultEmoji,
     resultLabel,
+    story,
+    userUUID,
+    selectedOptionIds: optionIds,
+    scores: scoreMap,
+  };
+
+  return result;
+};
+
+export const calculateResultWithLocale = (
+  optionIds: string[],
+  userUUID?: string,
+  locale: Locale = 'zh-CN',
+): QuizResult => {
+  // 1. 验证答案
+  const validation = validateAnswers(optionIds);
+  if (!validation.valid) {
+    throw new Error(validation.message);
+  }
+
+  // 2. 获取选项对象
+  const selectedOptions = findOptionsByIds(optionIds);
+
+  // 3. 计算分数
+  const scoreMap = calculateScores(selectedOptions);
+
+  // 4. 确定最终人格（使用平分处理）
+  const [wendyCode, ireneCode] = getFinalCharactersWithTiebreak(scoreMap, selectedOptions);
+
+  const characterCards = getCharacterCardsByLocale(locale);
+  const childProfiles = getChildProfilesByLocale(locale);
+
+  // 5. 获取人格卡片信息
+  const wendyCard = characterCards[wendyCode];
+  const ireneCard = characterCards[ireneCode];
+
+  // 6. 根据 locale 生成小剧场
+  const story = generateStory(wendyCode, ireneCode, locale);
+
+  // 7. 获取孩子人格信息
+  const childKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
+  const childProfile = childProfiles[childKey];
+
+  if (!childProfile) {
+    throw new Error(`未找到孩子人格组合：${childKey}`);
+  }
+
+  const result: QuizResult = {
+    wendyType: wendyCard,
+    ireneType: ireneCard,
+    childProfile,
+    resultTitle: locale === 'en-US' ? 'Your personality trait is' : '你的性格特征是',
+    resultEmoji: `${childProfile.emoji}`,
+    resultLabel: `${childProfile.label}`,
     story,
     userUUID,
     selectedOptionIds: optionIds,
