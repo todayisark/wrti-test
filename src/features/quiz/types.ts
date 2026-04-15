@@ -45,6 +45,30 @@ export type ParentCharacterCard = {
   emoji?: string;
 };
 
+/**
+ * 孩子人格组合
+ * 定义 16 种父母组合下的孩子特征
+ */
+export type ChildProfile = {
+  /** Wendy 人格代码 */
+  wendyCode: WendyCode;
+  /** Irene 人格代码 */
+  ireneCode: IreneCode;
+  /** 孩子标签（如："暖慢宝"） */
+  label: string;
+  /** 孩子表情符号 */
+  emoji: string;
+  /** 孩子性格描述 */
+  personality: string;
+  /** 父母的养育方式 */
+  parentingStyle: string;
+};
+
+/**
+ * 孩子组合键类型（如："W1_I1"）
+ */
+export type ChildCombinationKey = `${WendyCode}_${IreneCode}`;
+
 // ==================== 题目系统 ====================
 
 /**
@@ -123,14 +147,14 @@ export type QuizResult = {
   wendyType: ParentCharacterCard;
   /** Irene 判定的人格类型 */
   ireneType: ParentCharacterCard;
+  /** 孩子人格信息 */
+  childProfile: ChildProfile;
   /** 结果标题（如："你是「小太阳DJ × 花店老板 的孩子」"） */
   resultTitle: string;
   /** 结果摘要 */
   resultSummary: string;
   /** 小剧场文案 */
   story: string;
-  /** 孩子标签（如："暖慢宝"） */
-  childLabel?: string;
 };
 
 // ==================== 小剧场模板 ====================

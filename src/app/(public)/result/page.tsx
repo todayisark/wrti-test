@@ -73,6 +73,11 @@ const ResultPage = () => {
         <div className="grid md:grid-cols-2 gap-6 mb-12">
           {/* Wendy 人格卡片 */}
           <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-pink-400">
+            <div className="mb-3">
+              <p className="text-xs text-pink-600 font-semibold uppercase tracking-wide">
+                妈咪孙承完
+              </p>
+            </div>
             <div className="flex items-center mb-4">
               <span className="text-4xl mr-3">{result.wendyType.emoji}</span>
               <div>
@@ -112,6 +117,11 @@ const ResultPage = () => {
 
           {/* Irene 人格卡片 */}
           <div className="bg-white rounded-xl shadow-lg p-6 border-t-4 border-purple-400">
+            <div className="mb-3">
+              <p className="text-xs text-purple-600 font-semibold uppercase tracking-wide">
+                妈妈裴柱现
+              </p>
+            </div>
             <div className="flex items-center mb-4">
               <span className="text-4xl mr-3">{result.ireneType.emoji}</span>
               <div>
@@ -147,6 +157,31 @@ const ResultPage = () => {
                 {result.ireneType.detailedDescription}
               </p>
             </div>
+          </div>
+        </div>
+
+        {/* 孩子人格卡片 */}
+        <div className="bg-gradient-to-r from-pink-500 to-purple-500 rounded-xl shadow-lg p-8 mb-12 text-white">
+          <div className="text-center mb-6">
+            <div className="text-5xl mb-3">{result.childProfile.emoji}</div>
+            <h2 className="text-3xl font-bold mb-2">{result.childProfile.label}</h2>
+            <p className="text-pink-100">特别的你</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 mb-4">
+            <h3 className="font-semibold text-xl mb-3 flex items-center">
+              <span className="mr-2">✨</span>
+              你的性格
+            </h3>
+            <p className="text-white/90 leading-relaxed">{result.childProfile.personality}</p>
+          </div>
+
+          <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <h3 className="font-semibold text-xl mb-3 flex items-center">
+              <span className="mr-2">💝</span>
+              她们会怎么爱你
+            </h3>
+            <p className="text-white/90 leading-relaxed">{result.childProfile.parentingStyle}</p>
           </div>
         </div>
 

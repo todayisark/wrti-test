@@ -3,10 +3,10 @@
  * 整合计分和小剧场生成，返回完整的测试结果
  */
 
-import { QUESTIONS, CHARACTER_CARDS } from '../constants';
+import { QUESTIONS, CHARACTER_CARDS, CHILD_PROFILES } from '../constants';
 import { calculateScores, getFinalCharacters } from './scoring';
 import { generateStory } from './story';
-import type { QuizResult, QuizOption, WendyCode, IreneCode } from '../types';
+import type { QuizResult, QuizOption, WendyCode, IreneCode, ChildCombinationKey } from '../types';
 
 /**
  * 根据选项 ID 数组查找对应的选项对象
@@ -93,14 +93,23 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
   // 6. 生成小剧场
   const story = generateStory(wendyCode, ireneCode);
 
-  // 7. 生成结果标题和摘要
-  const resultTitle = `你是「${wendyCard.title} × ${ireneCard.title}」的孩子`;
-  const resultSummary = `${wendyCard.name}的${wendyCard.personalityTraits[0]}遇上${ireneCard.name}的${ireneCard.personalityTraits[0]}，你会是一个怎样的孩子呢？`;
+  // 7. 获取孩子人格信息
+  const childKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
+  const childProfile = CHILD_PROFILES[childKey];
 
-  // 8. 构建返回结果
+  if (!childProfile) {
+    throw new Error(`未找到孩子人格组合：${childKey}`);
+  }
+
+  // 8. 生成结果标题和摘要
+  const resultTitle = `你是「${wendyCard.name} × ${ireneCard.name}」的孩子`;
+  const resultSummary = `${childProfile.emoji} ${childProfile.label}`;
+
+  // 9. 构建返回结果
   const result: QuizResult = {
     wendyType: wendyCard,
     ireneType: ireneCard,
+    childProfile,
     resultTitle,
     resultSummary,
     story,

@@ -6,8 +6,16 @@
 import charactersData from '../data/characters.json';
 import questionsData from '../data/questions.json';
 import storyTemplatesData from '../data/story-templates.json';
+import childrenData from '../data/children.json';
 
-import type { ParentCharacterCard, QuizQuestion, StoryTemplate, CharacterCode } from '../types';
+import type {
+  ParentCharacterCard,
+  QuizQuestion,
+  StoryTemplate,
+  CharacterCode,
+  ChildProfile,
+  ChildCombinationKey,
+} from '../types';
 
 /**
  * 人格卡片数据（Record 类型，按 code 索引）
@@ -23,3 +31,8 @@ export const QUESTIONS = questionsData as QuizQuestion[];
  * 小剧场句子池
  */
 export const STORY_TEMPLATES = storyTemplatesData as StoryTemplate;
+
+/**
+ * 孩子人格组合数据（16 种组合）
+ */
+export const CHILD_PROFILES = childrenData as Record<ChildCombinationKey, ChildProfile>;
