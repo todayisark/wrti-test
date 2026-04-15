@@ -7,6 +7,7 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { Box, Typography, Button } from '@mui/material';
 import { QUESTIONS } from '@/features/quiz/constants';
 import type { QuizSubmitResponse } from '@/features/quiz/types';
 
@@ -68,95 +69,213 @@ const QuizPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-pink-50 to-purple-50 py-8 px-4">
-      <div className="max-w-3xl mx-auto">
-        {/* 页面标题 */}
-        <div className="text-center mb-8">
-          <h1 className="text-3xl font-bold text-gray-800 mb-2">CP 人格测试</h1>
-          <p className="text-gray-600">共 24 道题 · 已完成 {Object.keys(answers).length} / 24</p>
-          <div className="w-full bg-gray-200 rounded-full h-2 mt-4">
-            <div
-              className="bg-gradient-to-r from-pink-500 to-purple-500 h-2 rounded-full transition-all duration-300"
-              style={{ width: `${(Object.keys(answers).length / 24) * 100}%` }}
+    <Box
+      sx={{
+        minHeight: '100vh',
+        background: '#fce7f3',
+        py: 8,
+        px: { xs: 2, sm: 3 },
+      }}
+    >
+      {/* 固定进度条 */}
+      <Box
+        sx={{
+          position: 'fixed',
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 1000,
+          bgcolor: 'white',
+          boxShadow: 2,
+          py: 1.5,
+          px: { xs: 2, sm: 3 },
+        }}
+      >
+        <Box sx={{ maxWidth: 900, mx: 'auto' }}>
+          <Typography variant="body2" sx={{ color: 'text.secondary', mb: 1, textAlign: 'center' }}>
+            已完成 {Object.keys(answers).length} / 24
+          </Typography>
+          <Box
+            sx={{
+              width: '100%',
+              height: 6,
+              bgcolor: '#f3f4f6',
+              borderRadius: 999,
+              overflow: 'hidden',
+            }}
+          >
+            <Box
+              sx={{
+                height: '100%',
+                background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+                borderRadius: 999,
+                transition: 'width 0.3s',
+                width: `${(Object.keys(answers).length / 24) * 100}%`,
+              }}
             />
-          </div>
-        </div>
+          </Box>
+        </Box>
+      </Box>
+
+      <Box sx={{ maxWidth: 900, mx: 'auto', pt: 8 }}>
+        {/* 页面标题 */}
+        <Box sx={{ textAlign: 'center', mb: 6 }}>
+          <Typography variant="h5" sx={{ fontWeight: 'bold', mb: 1 }}>
+            「她们的孩子」人格测试
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'text.secondary' }}>
+            共 24 道题
+          </Typography>
+        </Box>
 
         {/* 题目列表 */}
-        <div className="space-y-6">
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
           {QUESTIONS.map((question, index) => {
             const isAnswered = !!answers[question.id];
             return (
-              <div
+              <Box
                 key={question.id}
-                className={`bg-white rounded-lg shadow-md p-6 transition-all ${
-                  isAnswered ? 'border-2 border-purple-300' : ''
-                }`}
+                sx={{
+                  bgcolor: 'white',
+                  borderRadius: 2,
+                  p: 3,
+                  boxShadow: 2,
+                  border: isAnswered ? '2px solid #3b82f6' : '2px solid transparent',
+                  transition: 'all 0.2s',
+                }}
               >
-                <h3 className="text-lg font-semibold text-gray-800 mb-4">
+                <Typography variant="body1" sx={{ fontWeight: 600, mb: 2 }}>
                   {index + 1}. {question.prompt}
-                </h3>
+                </Typography>
 
-                <div className="space-y-3">
+                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 1.5 }}>
                   {question.options.map((option) => {
                     const isSelected = answers[question.id] === option.id;
                     return (
-                      <button
+                      <Box
                         key={option.id}
                         onClick={() => handleOptionSelect(question.id, option.id)}
-                        className={`w-full text-left p-4 rounded-lg border-2 transition-all ${
-                          isSelected
-                            ? 'border-purple-500 bg-purple-50 shadow-sm'
-                            : 'border-gray-200 hover:border-purple-300 hover:bg-purple-50/50'
-                        }`}
+                        sx={{
+                          p: 2,
+                          borderRadius: 2,
+                          border: isSelected ? '2px solid #3b82f6' : '2px solid #e5e7eb',
+                          bgcolor: isSelected ? '#eff6ff' : 'transparent',
+                          cursor: 'pointer',
+                          transition: 'all 0.2s',
+                          '&:hover': {
+                            borderColor: '#60a5fa',
+                            bgcolor: isSelected ? '#eff6ff' : '#f9fafb',
+                          },
+                        }}
                       >
-                        <div className="flex items-start">
-                          <div
-                            className={`flex-shrink-0 w-5 h-5 rounded-full border-2 mr-3 mt-0.5 ${
-                              isSelected ? 'border-purple-500 bg-purple-500' : 'border-gray-300'
-                            }`}
+                        <Box sx={{ display: 'flex', alignItems: 'flex-start' }}>
+                          {/* 单选圆圈 */}
+                          <Box
+                            sx={{
+                              flexShrink: 0,
+                              width: 20,
+                              height: 20,
+                              borderRadius: '50%',
+                              border: isSelected ? '2px solid #3b82f6' : '2px solid #d1d5db',
+                              bgcolor: isSelected ? '#3b82f6' : 'transparent',
+                              mr: 1.5,
+                              mt: 0.2,
+                              display: 'flex',
+                              alignItems: 'center',
+                              justifyContent: 'center',
+                            }}
                           >
                             {isSelected && (
-                              <div className="w-full h-full flex items-center justify-center">
-                                <div className="w-2 h-2 bg-white rounded-full" />
-                              </div>
+                              <Box
+                                sx={{
+                                  width: 8,
+                                  height: 8,
+                                  borderRadius: '50%',
+                                  bgcolor: 'white',
+                                }}
+                              />
                             )}
-                          </div>
-                          <span className="text-gray-700">{option.text}</span>
-                        </div>
-                      </button>
+                          </Box>
+                          <Typography variant="body2" sx={{ color: 'text.primary' }}>
+                            {option.text}
+                          </Typography>
+                        </Box>
+                      </Box>
                     );
                   })}
-                </div>
-              </div>
+                </Box>
+              </Box>
             );
           })}
-        </div>
+        </Box>
 
         {/* 提交按钮 */}
-        <div className="mt-8 sticky bottom-4">
-          <div className="bg-white rounded-lg shadow-lg p-4">
+        <Box
+          sx={{
+            position: 'sticky',
+            bottom: 16,
+            mt: 4,
+          }}
+        >
+          <Box
+            sx={{
+              bgcolor: 'white',
+              borderRadius: 2,
+              p: 2,
+              boxShadow: 4,
+            }}
+          >
             {error && (
-              <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">
-                {error}
-              </div>
+              <Box
+                sx={{
+                  mb: 2,
+                  p: 1.5,
+                  bgcolor: '#fef2f2',
+                  border: '1px solid #fecaca',
+                  borderRadius: 2,
+                }}
+              >
+                <Typography variant="body2" sx={{ color: '#dc2626' }}>
+                  {error}
+                </Typography>
+              </Box>
             )}
 
-            <button
+            <Button
               onClick={handleSubmit}
               disabled={!isComplete || isSubmitting}
-              className={`w-full py-4 rounded-lg font-semibold text-white transition-all ${
-                isComplete && !isSubmitting
-                  ? 'bg-gradient-to-r from-pink-500 to-purple-500 hover:from-pink-600 hover:to-purple-600 shadow-lg hover:shadow-xl'
-                  : 'bg-gray-300 cursor-not-allowed'
-              }`}
+              fullWidth
+              sx={{
+                py: 2,
+                borderRadius: 2,
+                fontWeight: 600,
+                fontSize: '1rem',
+                textTransform: 'none',
+                background:
+                  isComplete && !isSubmitting
+                    ? 'linear-gradient(to right, #ec4899, #3b82f6)'
+                    : '#d1d5db',
+                color: 'white',
+                boxShadow: isComplete && !isSubmitting ? 3 : 0,
+                '&:hover': {
+                  background:
+                    isComplete && !isSubmitting
+                      ? 'linear-gradient(to right, #db2777, #2563eb)'
+                      : '#d1d5db',
+                  boxShadow: isComplete && !isSubmitting ? 6 : 0,
+                },
+                '&:disabled': {
+                  color: 'white',
+                  cursor: 'not-allowed',
+                },
+              }}
             >
               {isSubmitting ? '提交中...' : isComplete ? '查看结果' : '请完成全部题目'}
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+            </Button>
+          </Box>
+        </Box>
+      </Box>
+    </Box>
   );
 };
 
