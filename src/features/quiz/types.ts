@@ -151,6 +151,12 @@ export type QuizResult = {
   resultLabel: string;
   /** 小剧场文案 */
   story: string;
+  /** 用户 UUID（匿名追踪） */
+  userUUID?: string;
+  /** 用户选择的题目选项 ID 数组 */
+  selectedOptionIds?: string[];
+  /** W1-W4 和 I1-I4 的详细分数 */
+  scores?: ScoreMap;
 };
 
 // ==================== 小剧场模板 ====================

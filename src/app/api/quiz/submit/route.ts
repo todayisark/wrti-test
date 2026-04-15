@@ -7,6 +7,7 @@ import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 import { QuizSubmitSimpleSchema } from '@/features/quiz/schemas';
 import { calculateResult } from '@/features/quiz/server';
+import { createClient } from '@/lib/supabase/server';
 
 /**
  * 提交测试答案并获取结果
@@ -20,7 +21,20 @@ export const POST = async (request: Request) => {
     const validated = QuizSubmitSimpleSchema.parse(body);
 
     // 3. 调用业务逻辑计算结果
-    const result = calculateResult(validated.optionIds);
+    const result = calculateResult(validated.optionIds, validated.userUUID);
+
+    // 3.5 保存结果到数据库
+    const supabase = await createClient();
+    const { error: insertError } = await supabase.from('quiz_results').insert({
+      user_uuid: validated.userUUID || null,
+      selected_options: validated.optionIds,
+      scores: result.scores,
+    });
+
+    if (insertError) {
+      console.error('数据库插入错误:', insertError);
+      // 不中断响应，只记录日志
+    }
 
     // 4. 返回成功响应
     return NextResponse.json({

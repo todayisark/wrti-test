@@ -26,6 +26,7 @@ export const QuizSubmitSchema = z.object({
  */
 export const QuizSubmitSimpleSchema = z.object({
   optionIds: z.array(z.string()).length(24, { message: '必须提供 24 个选项 ID' }),
+  userUUID: z.string().optional(),
 });
 
 /**

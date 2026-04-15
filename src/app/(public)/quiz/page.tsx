@@ -42,13 +42,16 @@ const QuizPage = () => {
       // 构造 optionIds 数组
       const optionIds = QUESTIONS.map((q) => answers[q.id]);
 
+      // 获取用户 UUID
+      const userUUID = localStorage.getItem('wrti_user_uuid') || '';
+
       // 调用 API
       const response = await fetch('/api/quiz/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ optionIds }),
+        body: JSON.stringify({ optionIds, userUUID }),
       });
 
       const result: QuizSubmitResponse = await response.json();

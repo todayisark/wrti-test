@@ -10,6 +10,20 @@ import { useRouter } from 'next/navigation';
 import { Box, Typography, Button, Collapse, IconButton } from '@mui/material';
 import { ArrowForward, BarChart, ExpandMore, ExpandLess } from '@mui/icons-material';
 
+/**
+ * 生成或获取用户 UUID
+ */
+const getOrCreateUserUUID = (): string => {
+  if (typeof window === 'undefined') return '';
+  const key = 'wrti_user_uuid';
+  let uuid = localStorage.getItem(key);
+  if (!uuid) {
+    uuid = `${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    localStorage.setItem(key, uuid);
+  }
+  return uuid;
+};
+
 const HomePage = () => {
   const router = useRouter();
   // 使用函数式初始化，只在组件首次渲染时执行一次
@@ -21,6 +35,9 @@ const HomePage = () => {
   });
 
   const [expandLog, setExpandLog] = useState(false);
+
+  // 初始化用户 UUID
+  const userUUID = getOrCreateUserUUID();
 
   const handleStartQuiz = () => {
     localStorage.removeItem('quizResult');
