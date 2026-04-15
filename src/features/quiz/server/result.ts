@@ -68,9 +68,10 @@ export const validateAnswers = (optionIds: string[]): { valid: boolean; message?
 /**
  * 计算测试结果
  * @param optionIds 用户选择的选项 ID 数组（24 个）
+ * @param userUUID 用户的唯一标识符（用于数据库存储）
  * @returns 完整的测试结果
  */
-export const calculateResult = (optionIds: string[]): QuizResult => {
+export const calculateResult = (optionIds: string[], userUUID?: string): QuizResult => {
   // 1. 验证答案
   const validation = validateAnswers(optionIds);
   if (!validation.valid) {
@@ -114,8 +115,10 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
     resultTitle,
     resultEmoji,
     resultLabel,
-
     story,
+    userUUID,
+    selectedOptionIds: optionIds,
+    scores: scoreMap,
   };
 
   return result;

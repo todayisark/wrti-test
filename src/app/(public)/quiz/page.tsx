@@ -11,6 +11,20 @@ import { Box, Typography, Button } from '@mui/material';
 import { QUESTIONS } from '@/features/quiz/constants';
 import type { QuizSubmitResponse } from '@/features/quiz/types';
 
+const getOrCreateUserUUID = (): string => {
+  const key = 'wrti_user_uuid';
+  const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
+  const existing = localStorage.getItem(key);
+
+  if (existing && uuidRegex.test(existing)) {
+    return existing;
+  }
+
+  const generated = crypto.randomUUID();
+  localStorage.setItem(key, generated);
+  return generated;
+};
+
 const QuizPage = () => {
   const router = useRouter();
   const [answers, setAnswers] = useState<Record<string, string>>({});
@@ -42,13 +56,16 @@ const QuizPage = () => {
       // 构造 optionIds 数组
       const optionIds = QUESTIONS.map((q) => answers[q.id]);
 
+      // 获取用户 UUID
+      const userUUID = getOrCreateUserUUID();
+
       // 调用 API
       const response = await fetch('/api/quiz/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ optionIds }),
+        body: JSON.stringify({ optionIds, userUUID }),
       });
 
       const result: QuizSubmitResponse = await response.json();
