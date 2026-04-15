@@ -44,8 +44,29 @@ const HomePage = () => {
           <Typography variant="h4" sx={{ fontWeight: 'bold' }}>
             测一测你是哪种
           </Typography>
-          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 2 }}>
+          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
             「她们的孩子」
+          </Typography>
+          <Typography
+            variant="h2"
+            sx={{
+              fontWeight: 'bold',
+              mb: 2,
+              display: 'inline-block',
+              backgroundImage: 'linear-gradient(90deg, #ec4899, #3b82f6, #ec4899)',
+              backgroundSize: '200% auto',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              animation: 'flowGradient 4s linear infinite',
+              whiteSpace: 'pre-line',
+              lineHeight: 1.3,
+              '@keyframes flowGradient': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '100%': { backgroundPosition: '200% 50%' },
+              },
+            }}
+          >
+            WRTI
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             探索你是哪种{' '}
