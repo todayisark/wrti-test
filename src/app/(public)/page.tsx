@@ -7,8 +7,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { Box, Typography, Button } from '@mui/material';
-import { ArrowForward, BarChart } from '@mui/icons-material';
+import { Box, Typography, Button, Collapse, IconButton } from '@mui/material';
+import { ArrowForward, BarChart, ExpandMore, ExpandLess } from '@mui/icons-material';
 
 const HomePage = () => {
   const router = useRouter();
@@ -19,6 +19,8 @@ const HomePage = () => {
     }
     return false;
   });
+
+  const [expandLog, setExpandLog] = useState(false);
 
   const handleStartQuiz = () => {
     localStorage.removeItem('quizResult');
@@ -199,13 +201,78 @@ const HomePage = () => {
           )}
         </Box>
 
+        {/* 更新日志区域 */}
+        <Box
+          sx={{
+            bgcolor: 'white',
+            borderRadius: 4,
+            p: 4,
+            mb: 6,
+            mt: 6,
+            boxShadow: 3,
+          }}
+        >
+          {/* 最新日志单行显示 */}
+          <Box
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              mb: expandLog ? 2 : 0,
+            }}
+          >
+            <Box>
+              <Typography variant="body2" color="text.secondary" sx={{ mb: 0.5 }}>
+                <Box component="span" sx={{ fontWeight: 600, color: '#3b82f6' }}>
+                  v1.1.0
+                </Box>
+                {' · '}
+                <Box component="span" sx={{ fontSize: '0.875rem' }}>
+                  2026-04-16 00:59:30
+                </Box>
+              </Typography>
+              <Typography variant="body2" color="text.secondary">
+                优化计分算法，改进平分处理机制
+              </Typography>
+            </Box>
+            <IconButton onClick={() => setExpandLog(!expandLog)} sx={{ ml: 2 }} size="small">
+              {expandLog ? <ExpandLess /> : <ExpandMore />}
+            </IconButton>
+          </Box>
+
+          {/* 展开区域-历史日志 */}
+          <Collapse in={expandLog}>
+            <Box sx={{ mt: 3, pt: 3, borderTop: '1px solid #e5e7eb' }}>
+              <Typography variant="body2" sx={{ fontWeight: 600, mb: 2 }}>
+                更新历史
+              </Typography>
+              <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
+                <Box>
+                  <Typography variant="body2" color="text.secondary">
+                    <Box component="span" sx={{ fontWeight: 600, color: '#ec4899' }}>
+                      v1.0.0
+                    </Box>
+                    {' · '}
+                    <Box component="span" sx={{ fontSize: '0.875rem' }}>
+                      2026-04-10 10:00:00
+                    </Box>
+                  </Typography>
+                  <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
+                    完成 24 道测试题库、16 种人格组合与对应故事
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
+          </Collapse>
+        </Box>
+
         {/* 页脚说明 */}
         <Box sx={{ mt: 8, textAlign: 'center' }}>
           <Typography variant="body2" color="text.secondary">
             本测试仅供娱乐，所有人格特质均为虚构设定
           </Typography>
           <Typography variant="body2" color="text.secondary" sx={{ mt: 1 }}>
-            v1.0.0 MVP · 无需登录 · 结果仅本地保存
+            v1.1.0 MVP · 无需登录 · 结果仅本地保存
           </Typography>
         </Box>
 

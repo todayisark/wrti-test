@@ -132,3 +132,145 @@ export const getFinalCharacters = (scoreMap: ScoreMap): [WendyCode, IreneCode] =
 
   return [wendyCharacter, ireneCharacter];
 };
+
+/**
+ * 从选项中获取某个问题某个人格的得分（用于平分处理）
+ */
+const getScoreInQuestion = (
+  questionId: string,
+  code: CharacterCode,
+  options: QuizOption[],
+): number => {
+  const option = options.find((opt) => opt.id.toLowerCase().startsWith(questionId.toLowerCase()));
+  if (!option) return 0;
+  const rule = option.scoreRules.find((r) => r.code === code);
+  return rule?.score ?? 0;
+};
+
+/**
+ * 从 Wendy 组中找出得分最高的人格（带锚题平分处理）
+ * 平局时按锚题顺序：Q1 → Q5 → Q10 → Q2 → Q7 → Q12 → Q3 → Q6 → Q9 → Q4 → Q8 → Q11
+ */
+export const getTopWendyCharacterWithTiebreak = (
+  scoreMap: ScoreMap,
+  selectedOptions: QuizOption[],
+): WendyCode => {
+  const wendyCodes: WendyCode[] = ['W1', 'W2', 'W3', 'W4'];
+
+  let maxScore = -1;
+  for (const code of wendyCodes) {
+    if (scoreMap.wendy[code] > maxScore) {
+      maxScore = scoreMap.wendy[code];
+    }
+  }
+
+  const topCharacters = wendyCodes.filter((code) => scoreMap.wendy[code] === maxScore);
+
+  if (topCharacters.length === 1) {
+    return topCharacters[0];
+  }
+
+  // 按锚题顺序平分：W1(Q1,Q5,Q10) / W2(Q3,Q8,Q11) / W3(Q4,Q6,Q9) / W4(Q2,Q7,Q12)
+  const tiebreakQuestions = [
+    'q1',
+    'q5',
+    'q10',
+    'q2',
+    'q7',
+    'q12',
+    'q3',
+    'q6',
+    'q9',
+    'q4',
+    'q8',
+    'q11',
+  ];
+
+  for (const qId of tiebreakQuestions) {
+    const scores: Record<WendyCode, number> = { W1: 0, W2: 0, W3: 0, W4: 0 };
+
+    for (const code of topCharacters) {
+      scores[code] = getScoreInQuestion(qId, code, selectedOptions);
+    }
+
+    const maxTiebreak = Math.max(...topCharacters.map((code) => scores[code]));
+    if (maxTiebreak > 0) {
+      const winners = topCharacters.filter((code) => scores[code] === maxTiebreak);
+      if (winners.length === 1) {
+        return winners[0];
+      }
+    }
+  }
+
+  return topCharacters[0];
+};
+
+/**
+ * 从 Irene 组中找出得分最高的人格（带锚题平分处理）
+ * 平局时按锚题顺序：Q13 → Q16 → Q24 → Q14 → Q18 → Q23 → Q17 → Q20 → Q21 → Q15 → Q19 → Q22
+ */
+export const getTopIreneCharacterWithTiebreak = (
+  scoreMap: ScoreMap,
+  selectedOptions: QuizOption[],
+): IreneCode => {
+  const ireneCodes: IreneCode[] = ['I1', 'I2', 'I3', 'I4'];
+
+  let maxScore = -1;
+  for (const code of ireneCodes) {
+    if (scoreMap.irene[code] > maxScore) {
+      maxScore = scoreMap.irene[code];
+    }
+  }
+
+  const topCharacters = ireneCodes.filter((code) => scoreMap.irene[code] === maxScore);
+
+  if (topCharacters.length === 1) {
+    return topCharacters[0];
+  }
+
+  // 按锚题顺序平分：I1(Q13,Q16,Q24) / I2(Q14,Q18,Q23) / I3(Q17,Q20,Q21) / I4(Q15,Q19,Q22)
+  const tiebreakQuestions = [
+    'q13',
+    'q16',
+    'q24',
+    'q14',
+    'q18',
+    'q23',
+    'q17',
+    'q20',
+    'q21',
+    'q15',
+    'q19',
+    'q22',
+  ];
+
+  for (const qId of tiebreakQuestions) {
+    const scores: Record<IreneCode, number> = { I1: 0, I2: 0, I3: 0, I4: 0 };
+
+    for (const code of topCharacters) {
+      scores[code] = getScoreInQuestion(qId, code, selectedOptions);
+    }
+
+    const maxTiebreak = Math.max(...topCharacters.map((code) => scores[code]));
+    if (maxTiebreak > 0) {
+      const winners = topCharacters.filter((code) => scores[code] === maxTiebreak);
+      if (winners.length === 1) {
+        return winners[0];
+      }
+    }
+  }
+
+  return topCharacters[0];
+};
+
+/**
+ * 获取最终人格组合（带锚题平分处理）
+ */
+export const getFinalCharactersWithTiebreak = (
+  scoreMap: ScoreMap,
+  selectedOptions: QuizOption[],
+): [WendyCode, IreneCode] => {
+  const wendyCharacter = getTopWendyCharacterWithTiebreak(scoreMap, selectedOptions);
+  const ireneCharacter = getTopIreneCharacterWithTiebreak(scoreMap, selectedOptions);
+  return [wendyCharacter, ireneCharacter];
+};

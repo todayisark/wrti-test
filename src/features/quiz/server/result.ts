@@ -4,7 +4,7 @@
  */
 
 import { QUESTIONS, CHARACTER_CARDS, CHILD_PROFILES } from '../constants';
-import { calculateScores, getFinalCharacters } from './scoring';
+import { calculateScores, getFinalCharactersWithTiebreak } from './scoring';
 import { generateStory } from './story';
 import type { QuizResult, QuizOption, WendyCode, IreneCode, ChildCombinationKey } from '../types';
 
@@ -83,8 +83,8 @@ export const calculateResult = (optionIds: string[]): QuizResult => {
   // 3. 计算分数
   const scoreMap = calculateScores(selectedOptions);
 
-  // 4. 确定最终人格
-  const [wendyCode, ireneCode] = getFinalCharacters(scoreMap);
+  // 4. 确定最终人格（使用平分处理）
+  const [wendyCode, ireneCode] = getFinalCharactersWithTiebreak(scoreMap, selectedOptions);
 
   // 5. 获取人格卡片信息
   const wendyCard = CHARACTER_CARDS[wendyCode];
