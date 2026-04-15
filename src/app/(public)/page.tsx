@@ -47,7 +47,7 @@ const HomePage = () => {
           <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
             「她们的孩子」
           </Typography>
-          <Typography
+          {/* <Typography
             variant="h2"
             sx={{
               fontWeight: 'bold',
@@ -67,7 +67,7 @@ const HomePage = () => {
             }}
           >
             WRTI
-          </Typography>
+          </Typography> */}
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             探索你是哪种{' '}
             <Box component="span" sx={{ color: '#3b82f6', fontWeight: 600 }}>
