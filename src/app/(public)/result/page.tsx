@@ -108,6 +108,16 @@ const ResultPage = () => {
               fontWeight: 'bold',
               mb: 1,
               mt: 2,
+            }}
+          >
+            {result.resultEmoji}
+          </Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: 'bold',
+              mb: 1,
+              mt: 2,
               display: 'inline-block',
               backgroundImage: 'linear-gradient(90deg, #ec4899, #3b82f6, #ec4899)',
               backgroundSize: '200% auto',
@@ -122,155 +132,166 @@ const ResultPage = () => {
               },
             }}
           >
-            {result.resultSummary}
+            {result.resultLabel}
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* 父母人格卡片 */}
+      <Box
+        sx={{
+          display: 'grid',
+          gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
+          gap: 3,
+          mb: 8,
+        }}
+      >
+        <PersonalityCard
+          character={result.wendyType}
+          label="你的妈咪孙承完是"
+          primaryColor="#3b82f6"
+          lightColor="#dbeafe"
+          darkColor="#1e40af"
+        />
+        <PersonalityCard
+          character={result.ireneType}
+          label="你的妈妈裴柱现是"
+          primaryColor="#ec4899"
+          lightColor="#fce7f3"
+          darkColor="#be185d"
+        />
+      </Box>
+
+      {/* 孩子人格卡片 */}
+      <Box
+        sx={{
+          background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+          borderRadius: 3,
+          p: { xs: 4, md: 6 },
+          mb: 8,
+          boxShadow: 4,
+          color: 'white',
+        }}
+      >
+        <Box sx={{ textAlign: 'center', mb: 4 }}>
+          <Typography variant="h2" sx={{ mb: 1.5 }}>
+            {result.childProfile.emoji}
+          </Typography>
+          <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
+            {result.childProfile.label}
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)' }}>
+            特别的你
           </Typography>
         </Box>
 
-        {/* 父母人格卡片 */}
         <Box
           sx={{
-            display: 'grid',
-            gridTemplateColumns: { xs: '1fr', md: '1fr 1fr' },
-            gap: 3,
-            mb: 8,
+            bgcolor: 'rgba(255,255,255,0.1)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: 2,
+            p: 3,
+            mb: 3,
           }}
         >
-          <PersonalityCard
-            character={result.wendyType}
-            label="你的妈咪孙承完是"
-            primaryColor="#3b82f6"
-            lightColor="#dbeafe"
-            darkColor="#1e40af"
-          />
-          <PersonalityCard
-            character={result.ireneType}
-            label="你的妈妈裴柱现是"
-            primaryColor="#ec4899"
-            lightColor="#fce7f3"
-            darkColor="#be185d"
-          />
-        </Box>
-
-        {/* 孩子人格卡片 */}
-        <Box
-          sx={{
-            background: 'linear-gradient(to right, #ec4899, #3b82f6)',
-            borderRadius: 3,
-            p: { xs: 4, md: 6 },
-            mb: 8,
-            boxShadow: 4,
-            color: 'white',
-          }}
-        >
-          <Box sx={{ textAlign: 'center', mb: 4 }}>
-            <Typography variant="h2" sx={{ mb: 1.5 }}>
-              {result.childProfile.emoji}
-            </Typography>
-            <Typography variant="h4" sx={{ fontWeight: 'bold', mb: 1 }}>
-              {result.childProfile.label}
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)' }}>
-              特别的你
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              bgcolor: 'rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: 2,
-              p: 3,
-              mb: 3,
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
-            >
-              <Box component="span" sx={{ mr: 1 }}>
-                ✨
-              </Box>
-              你的性格
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
-              {result.childProfile.personality}
-            </Typography>
-          </Box>
-
-          <Box
-            sx={{
-              bgcolor: 'rgba(255,255,255,0.1)',
-              backdropFilter: 'blur(10px)',
-              borderRadius: 2,
-              p: 3,
-            }}
-          >
-            <Typography
-              variant="h6"
-              sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
-            >
-              <Box component="span" sx={{ mr: 1 }}>
-                💝
-              </Box>
-              你在她们爱里的样子
-            </Typography>
-            <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
-              {result.childProfile.parentingStyle}
-            </Typography>
-          </Box>
-        </Box>
-
-        {/* 小剧场 */}
-        <Box
-          sx={{
-            bgcolor: 'white',
-            borderRadius: 3,
-            p: { xs: 4, md: 6 },
-            mb: 6,
-            boxShadow: 3,
-          }}
-        >
-          <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', mb: 4 }}>
-            一家三口的日常
-          </Typography>
           <Typography
-            variant="body1"
-            sx={{ color: 'text.primary', lineHeight: 1.8, whiteSpace: 'pre-line' }}
+            variant="h6"
+            sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
           >
-            {result.story}
+            <Box component="span" sx={{ mr: 1 }}>
+              ✨
+            </Box>
+            你的性格
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
+            {result.childProfile.personality}
           </Typography>
         </Box>
 
-        {/* 操作按钮 */}
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: { xs: 'column', sm: 'row' },
-            gap: 2,
-            justifyContent: 'center',
-            mb: 4,
+            bgcolor: 'rgba(255,255,255,0.1)',
+            backdropFilter: 'blur(10px)',
+            borderRadius: 2,
+            p: 3,
           }}
         >
-          <Button
-            onClick={handleRetry}
-            sx={{
-              px: 4,
-              py: 1.5,
-              background: 'linear-gradient(to right, #ec4899, #3b82f6)',
-              color: 'white',
-              fontWeight: 600,
-              borderRadius: 2,
-              boxShadow: 3,
-              textTransform: 'none',
-              '&:hover': {
-                background: 'linear-gradient(to right, #db2777, #2563eb)',
-                boxShadow: 4,
-              },
-            }}
+          <Typography
+            variant="h6"
+            sx={{ fontWeight: 600, mb: 1.5, display: 'flex', alignItems: 'center' }}
           >
-            重新测试
-          </Button>
-          <Button
+            <Box component="span" sx={{ mr: 1 }}>
+              💝
+            </Box>
+            你在她们爱里的样子
+          </Typography>
+          <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
+            {result.childProfile.parentingStyle}
+          </Typography>
+        </Box>
+      </Box>
+
+      {/* 小剧场 */}
+      <Box
+        sx={{
+          bgcolor: 'white',
+          borderRadius: 3,
+          p: { xs: 4, md: 6 },
+          mb: 6,
+          boxShadow: 3,
+        }}
+      >
+        <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', mb: 1 }}>
+          一家三口的日常
+        </Typography>
+        <Box
+          sx={{
+            width: 220,
+            height: 4,
+            mx: 'auto',
+            mb: 6,
+            borderRadius: 999,
+            background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+          }}
+        />
+        <Typography
+          variant="body1"
+          sx={{ color: 'text.primary', lineHeight: 1.8, whiteSpace: 'pre-line' }}
+        >
+          {result.story}
+        </Typography>
+      </Box>
+
+      {/* 操作按钮 */}
+      <Box
+        sx={{
+          display: 'flex',
+          flexDirection: { xs: 'column', sm: 'row' },
+          gap: 2,
+          justifyContent: 'center',
+          mb: 4,
+        }}
+      >
+        <Button
+          onClick={handleRetry}
+          sx={{
+            px: 4,
+            py: 1.5,
+            background: 'linear-gradient(to right, #ec4899, #3b82f6)',
+            color: 'white',
+            fontWeight: 600,
+            borderRadius: 2,
+            boxShadow: 3,
+            textTransform: 'none',
+            '&:hover': {
+              background: 'linear-gradient(to right, #db2777, #2563eb)',
+              boxShadow: 4,
+            },
+          }}
+        >
+          重新测试
+        </Button>
+        {/* <Button
             onClick={handleShare}
             sx={{
               px: 4,
@@ -289,25 +310,24 @@ const ResultPage = () => {
             }}
           >
             分享结果
-          </Button>
-        </Box>
+          </Button> */}
+      </Box>
 
-        {/* 返回首页链接 */}
-        <Box sx={{ textAlign: 'center' }}>
-          <Button
-            onClick={() => router.push('/')}
-            sx={{
-              color: 'text.secondary',
-              textTransform: 'none',
-              '&:hover': {
-                color: '#3b82f6',
-                bgcolor: 'transparent',
-              },
-            }}
-          >
-            返回首页
-          </Button>
-        </Box>
+      {/* 返回首页链接 */}
+      <Box sx={{ textAlign: 'center' }}>
+        <Button
+          onClick={() => router.push('/')}
+          sx={{
+            color: 'text.secondary',
+            textTransform: 'none',
+            '&:hover': {
+              color: '#3b82f6',
+              bgcolor: 'transparent',
+            },
+          }}
+        >
+          返回首页
+        </Button>
       </Box>
     </Box>
   );

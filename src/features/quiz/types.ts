@@ -145,8 +145,10 @@ export type QuizResult = {
   childProfile: ChildProfile;
   /** 结果标题 */
   resultTitle: string;
-  /** 结果摘要 */
-  resultSummary: string;
+  /** 结果表情符号 */
+  resultEmoji: string;
+  /** 结果标签 */
+  resultLabel: string;
   /** 小剧场文案 */
   story: string;
 };
