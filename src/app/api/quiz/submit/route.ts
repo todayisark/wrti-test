@@ -37,10 +37,15 @@ export const POST = async (request: Request) => {
 
     // 3.5 保存结果到数据库
     const supabase = await createClient();
+
+    // 提取最终人格组合结果
+    const personalityResult = `${result.wendyType.code}_${result.ireneType.code}`;
+
     const { error: insertError } = await supabase.from('quiz_results').insert({
       user_uuid: userUUID,
       selected_options: validated.optionIds,
       scores: result.scores,
+      personality_result: personalityResult,
     });
 
     if (insertError) {
