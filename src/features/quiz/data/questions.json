@@ -19,7 +19,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 2
+            "score": 1
           }
         ]
       },
@@ -85,7 +85,7 @@
         "scoreRules": [
           {
             "code": "W1",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -377,7 +377,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 2
+            "score": 1
           }
         ]
       }
@@ -413,7 +413,7 @@
         "scoreRules": [
           {
             "code": "W3",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -603,7 +603,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 2
+            "score": 1
           }
         ]
       },
