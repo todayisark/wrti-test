@@ -13,6 +13,7 @@ import changelogData from '@/features/quiz/data/changelog.json';
 import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
 import homeZhCN from '@/i18n/dictionaries/home/zh-CN.json';
 import homeEnUS from '@/i18n/dictionaries/home/en-US.json';
+import { generateUUID } from '@/lib/uuid';
 
 type ChangelogItem = {
   version: string;
@@ -41,7 +42,7 @@ const getOrCreateUserUUID = (): string => {
   const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
   let uuid = localStorage.getItem(key);
   if (!uuid || !uuidRegex.test(uuid)) {
-    uuid = crypto.randomUUID();
+    uuid = generateUUID();
     localStorage.setItem(key, uuid);
   }
   return uuid;

@@ -8,6 +8,7 @@ import { ZodError } from 'zod';
 import { QuizSubmitSimpleSchema } from '@/features/quiz/schemas';
 import { calculateResultWithLocale } from '@/features/quiz/server';
 import { createClient } from '@/lib/supabase/server';
+import { generateUUID } from '@/lib/uuid';
 
 /**
  * 提交测试答案并获取结果
@@ -32,14 +33,19 @@ export const POST = async (request: Request) => {
     const userUUID =
       validated.userUUID && uuidRegex.test(validated.userUUID)
         ? validated.userUUID
-        : crypto.randomUUID();
+        : generateUUID();
 
     // 3.5 保存结果到数据库
     const supabase = await createClient();
+
+    // 提取最终人格组合结果
+    const personalityResult = `${result.wendyType.code}_${result.ireneType.code}`;
+
     const { error: insertError } = await supabase.from('quiz_results').insert({
       user_uuid: userUUID,
       selected_options: validated.optionIds,
       scores: result.scores,
+      personality_result: personalityResult,
     });
 
     if (insertError) {
