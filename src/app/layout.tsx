@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, JetBrains_Mono } from 'next/font/google';
+import { GoogleAnalytics } from '@next/third-parties/google';
 import { Analytics } from '@vercel/analytics/next';
 import './globals.css';
 import MuiThemeProvider from '@/lib/MuiThemeProvider';
@@ -37,6 +38,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <MuiThemeProvider>{children}</MuiThemeProvider>
       </body>
+      <GoogleAnalytics gaId="G-88YWPVY2SN" />
       <Analytics />
     </html>
   );
