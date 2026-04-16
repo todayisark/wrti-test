@@ -1,0 +1,17 @@
+{
+  "page": {
+    "title": "\"Their Child\" Personality Test",
+    "totalQuestions": "{total} questions in total",
+    "progress": "Completed {completed} / {total}"
+  },
+  "errors": {
+    "incompleteAnswers": "Please answer all {total} questions",
+    "submitFailed": "Submission failed",
+    "submitRetry": "Submission failed. Please try again"
+  },
+  "actions": {
+    "submitting": "Submitting...",
+    "viewResult": "View Result",
+    "completeAll": "Please complete all questions"
+  }
+}

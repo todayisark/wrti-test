@@ -5,6 +5,14 @@
 
 import { STORY_TEMPLATES } from '../constants';
 import type { WendyCode, IreneCode, ChildCombinationKey } from '../types';
+import type { Locale } from '@/i18n/config';
+import storyTemplatesEnUS from '../data/story-templates.en-US.json';
+
+const STORY_TEMPLATES_EN_US = storyTemplatesEnUS as Record<string, string>;
+
+const getStoryTemplatesByLocale = (locale: Locale = 'zh-CN') => {
+  return locale === 'en-US' ? STORY_TEMPLATES_EN_US : STORY_TEMPLATES;
+};
 
 /**
  * 生成完整的小剧场文本
@@ -12,9 +20,14 @@ import type { WendyCode, IreneCode, ChildCombinationKey } from '../types';
  * @param ireneCode Irene 人格类型
  * @returns 生成的小剧场文本
  */
-export const generateStory = (wendyCode: WendyCode, ireneCode: IreneCode): string => {
+export const generateStory = (
+  wendyCode: WendyCode,
+  ireneCode: IreneCode,
+  locale: Locale = 'zh-CN',
+): string => {
   const storyKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
-  return STORY_TEMPLATES[storyKey] || '这个人格组合的故事还在创作中。';
+  const templates = getStoryTemplatesByLocale(locale);
+  return templates[storyKey] || '这个人格组合的故事还在创作中。';
 };
 
 /**
@@ -27,9 +40,10 @@ export const generateStory = (wendyCode: WendyCode, ireneCode: IreneCode): strin
 export const generateMultipleStories = (
   wendyCode: WendyCode,
   ireneCode: IreneCode,
+  locale: Locale = 'zh-CN',
   count: number = 3,
 ): string[] => {
-  const story = generateStory(wendyCode, ireneCode);
+  const story = generateStory(wendyCode, ireneCode, locale);
   return Array.from({ length: count }, () => story);
 };
 
@@ -39,10 +53,15 @@ export const generateMultipleStories = (
  * @param ireneCode Irene 人格类型
  * @returns 该人格组合可用的所有句子片段
  */
-export const previewTemplates = (wendyCode: WendyCode, ireneCode: IreneCode) => {
+export const previewTemplates = (
+  wendyCode: WendyCode,
+  ireneCode: IreneCode,
+  locale: Locale = 'zh-CN',
+) => {
   const storyKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
+  const templates = getStoryTemplatesByLocale(locale);
   return {
     key: storyKey,
-    story: STORY_TEMPLATES[storyKey] || '',
+    story: templates[storyKey] || '',
   };
 };

@@ -1,0 +1,24 @@
+{
+  "loading": {
+    "text": "加载中..."
+  },
+  "redirect": {
+    "parseErrorLog": "Failed to parse result"
+  },
+  "cards": {
+    "wendyLabel": "你的妈咪孙承完是",
+    "ireneLabel": "你的妈妈裴柱现是",
+    "specialYou": "特别的你",
+    "personalityTitle": "你的性格",
+    "parentingTitle": "你在她们爱里的样子"
+  },
+  "story": {
+    "title": "一家三口的日常"
+  },
+  "actions": {
+    "retry": "重新测试",
+    "share": "分享结果",
+    "shareComingSoon": "分享功能将在后续版本中实现",
+    "backHome": "返回首页"
+  }
+}

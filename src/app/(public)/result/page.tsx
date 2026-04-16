@@ -6,13 +6,31 @@
  */
 
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import { Box, Typography, Button } from '@mui/material';
 import type { QuizResult } from '@/features/quiz/types';
 import { PersonalityCard } from '@/components/PersonalityCard';
+import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
+import resultZhCN from '@/i18n/dictionaries/result/zh-CN.json';
+import resultEnUS from '@/i18n/dictionaries/result/en-US.json';
+
+type ResultDictionary = typeof resultZhCN;
+
+const resultDictionaries: Record<Locale, ResultDictionary> = {
+  'zh-CN': resultZhCN,
+  'en-US': resultEnUS,
+};
+
+const getLocaleFromPathname = (pathname: string): Locale => {
+  const segment = pathname.split('/')[1] || '';
+  return hasLocale(segment) ? segment : defaultLocale;
+};
 
 const ResultPage = () => {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = getLocaleFromPathname(pathname);
+  const dict = resultDictionaries[currentLocale];
   const [result, setResult] = useState<QuizResult | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
@@ -22,7 +40,7 @@ const ResultPage = () => {
 
     if (!savedResult) {
       // 如果没有结果，重定向到首页
-      router.push('/');
+      router.push(`/${currentLocale}`);
       return;
     }
 
@@ -30,21 +48,21 @@ const ResultPage = () => {
       const parsedResult = JSON.parse(savedResult) as QuizResult;
       setResult(parsedResult);
     } catch (error) {
-      console.error('Failed to parse result:', error);
-      router.push('/');
+      console.error(dict.redirect.parseErrorLog, error);
+      router.push(`/${currentLocale}`);
     } finally {
       setIsLoading(false);
     }
-  }, [router]);
+  }, [router, currentLocale, dict.redirect.parseErrorLog]);
 
   const handleRetry = () => {
     localStorage.removeItem('quizResult');
-    router.push('/quiz');
+    router.push(`/${currentLocale}/quiz`);
   };
 
   const handleShare = () => {
     // TODO: 实现分享功能（Phase 3）
-    alert('分享功能将在后续版本中实现');
+    alert(dict.actions.shareComingSoon);
   };
 
   if (isLoading) {
@@ -76,7 +94,7 @@ const ResultPage = () => {
             }}
           />
           <Typography variant="body1" sx={{ color: 'text.secondary' }}>
-            加载中...
+            {dict.loading.text}
           </Typography>
         </Box>
       </Box>
@@ -148,14 +166,14 @@ const ResultPage = () => {
       >
         <PersonalityCard
           character={result.wendyType}
-          label="你的妈咪孙承完是"
+          label={dict.cards.wendyLabel}
           primaryColor="#3b82f6"
           lightColor="#dbeafe"
           darkColor="#1e40af"
         />
         <PersonalityCard
           character={result.ireneType}
-          label="你的妈妈裴柱现是"
+          label={dict.cards.ireneLabel}
           primaryColor="#ec4899"
           lightColor="#fce7f3"
           darkColor="#be185d"
@@ -181,7 +199,7 @@ const ResultPage = () => {
             {result.childProfile.label}
           </Typography>
           <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.9)' }}>
-            特别的你
+            {dict.cards.specialYou}
           </Typography>
         </Box>
 
@@ -201,7 +219,7 @@ const ResultPage = () => {
             <Box component="span" sx={{ mr: 1 }}>
               ✨
             </Box>
-            你的性格
+            {dict.cards.personalityTitle}
           </Typography>
           <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
             {result.childProfile.personality}
@@ -223,7 +241,7 @@ const ResultPage = () => {
             <Box component="span" sx={{ mr: 1 }}>
               💝
             </Box>
-            你在她们爱里的样子
+            {dict.cards.parentingTitle}
           </Typography>
           <Typography variant="body1" sx={{ color: 'rgba(255,255,255,0.95)', lineHeight: 1.7 }}>
             {result.childProfile.parentingStyle}
@@ -242,7 +260,7 @@ const ResultPage = () => {
         }}
       >
         <Typography variant="h5" sx={{ fontWeight: 'bold', textAlign: 'center', mb: 1 }}>
-          一家三口的日常
+          {dict.story.title}
         </Typography>
         <Box
           sx={{
@@ -289,7 +307,7 @@ const ResultPage = () => {
             },
           }}
         >
-          重新测试
+          {dict.actions.retry}
         </Button>
         {/* <Button
             onClick={handleShare}
@@ -316,7 +334,7 @@ const ResultPage = () => {
       {/* 返回首页链接 */}
       <Box sx={{ textAlign: 'center' }}>
         <Button
-          onClick={() => router.push('/')}
+          onClick={() => router.push(`/${currentLocale}`)}
           sx={{
             color: 'text.secondary',
             textTransform: 'none',
@@ -326,7 +344,7 @@ const ResultPage = () => {
             },
           }}
         >
-          返回首页
+          {dict.actions.backHome}
         </Button>
       </Box>
     </Box>

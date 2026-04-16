@@ -1,0 +1,17 @@
+{
+  "page": {
+    "title": "「她们的孩子」人格测试",
+    "totalQuestions": "共 {total} 道题",
+    "progress": "已完成 {completed} / {total}"
+  },
+  "errors": {
+    "incompleteAnswers": "请回答全部 {total} 道题",
+    "submitFailed": "提交失败",
+    "submitRetry": "提交失败，请重试"
+  },
+  "actions": {
+    "submitting": "提交中...",
+    "viewResult": "查看结果",
+    "completeAll": "请完成全部题目"
+  }
+}

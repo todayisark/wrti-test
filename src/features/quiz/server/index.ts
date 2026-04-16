@@ -16,4 +16,10 @@ export {
 export { generateStory, generateMultipleStories, previewTemplates } from './story';
 
 // 结果计算
-export { validateAnswers, calculateResult, getCharacterCards, regenerateStory } from './result';
+export {
+  validateAnswers,
+  calculateResult,
+  calculateResultWithLocale,
+  getCharacterCards,
+  regenerateStory,
+} from './result';

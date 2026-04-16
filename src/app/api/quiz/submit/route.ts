@@ -6,7 +6,7 @@
 import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 import { QuizSubmitSimpleSchema } from '@/features/quiz/schemas';
-import { calculateResult } from '@/features/quiz/server';
+import { calculateResultWithLocale } from '@/features/quiz/server';
 import { createClient } from '@/lib/supabase/server';
 
 /**
@@ -21,7 +21,11 @@ export const POST = async (request: Request) => {
     const validated = QuizSubmitSimpleSchema.parse(body);
 
     // 3. 调用业务逻辑计算结果
-    const result = calculateResult(validated.optionIds, validated.userUUID);
+    const result = calculateResultWithLocale(
+      validated.optionIds,
+      validated.userUUID,
+      validated.locale || 'zh-CN',
+    );
 
     // 3.2 保证 user_uuid 一定是合法 UUID（兼容旧版本本地缓存）
     const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;

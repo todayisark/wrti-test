@@ -1,0 +1,24 @@
+{
+  "loading": {
+    "text": "Loading..."
+  },
+  "redirect": {
+    "parseErrorLog": "Failed to parse result"
+  },
+  "cards": {
+    "wendyLabel": "Your mommy, Shon Seung-wan, is",
+    "ireneLabel": "Your mom, Bae Ju-hyeon, is",
+    "specialYou": "The one and only you",
+    "personalityTitle": "Your Personality",
+    "parentingTitle": "How you are loved by them"
+  },
+  "story": {
+    "title": "A Day in the Life of the Three of You"
+  },
+  "actions": {
+    "retry": "Retake Test",
+    "share": "Share Result",
+    "shareComingSoon": "Sharing will be available in a future version",
+    "backHome": "Back to Home"
+  }
+}
