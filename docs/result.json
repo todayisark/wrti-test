@@ -1,0 +1,25 @@
+{
+  "success": true,
+  "data": {
+    "totalSubmissions": 265,
+    "distribution": [
+      { "personalityType": "W2_I1", "count": 87, "ratio": 32.83 },
+      { "personalityType": "W3_I1", "count": 39, "ratio": 14.72 },
+      { "personalityType": "W4_I1", "count": 25, "ratio": 9.43 },
+      { "personalityType": "W2_I3", "count": 24, "ratio": 9.06 },
+      { "personalityType": "W1_I1", "count": 20, "ratio": 7.55 },
+      { "personalityType": "W3_I2", "count": 19, "ratio": 7.17 },
+      { "personalityType": "W2_I2", "count": 8, "ratio": 3.02 },
+      { "personalityType": "W1_I4", "count": 7, "ratio": 2.64 },
+      { "personalityType": "W2_I4", "count": 7, "ratio": 2.64 },
+      { "personalityType": "W3_I3", "count": 6, "ratio": 2.26 },
+      { "personalityType": "W3_I4", "count": 6, "ratio": 2.26 },
+      { "personalityType": "W4_I3", "count": 5, "ratio": 1.89 },
+      { "personalityType": "W1_I3", "count": 4, "ratio": 1.51 },
+      { "personalityType": "W4_I4", "count": 4, "ratio": 1.51 },
+      { "personalityType": "W1_I2", "count": 2, "ratio": 0.75 },
+      { "personalityType": "W4_I2", "count": 2, "ratio": 0.75 }
+    ],
+    "generatedAt": "2026-04-16T14:42:50.845Z"
+  }
+}

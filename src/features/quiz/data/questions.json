@@ -7,32 +7,56 @@
         "id": "q1_a",
         "text": "立刻打语音过去，先把她逗笑再说",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q1_b",
         "text": "先陪着她聊，嘴上说得不重，但会一直想着她到底有多难受",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q1_c",
         "text": "问清楚发生了什么，想帮她把事情一件件理顺",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q1_d",
         "text": "先判断这件事值不值得她这么难过，再决定要不要管",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -42,35 +66,59 @@
     "prompt": "聚会刚开始时，大家都还不太熟，气氛有点冷。你通常会——",
     "options": [
       {
-        "id": "q2_a",
-        "text": "主动开话题，哪怕有点吵也要先把场子热起来",
-        "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W3", "score": 1 }
-        ]
-      },
-      {
-        "id": "q2_b",
-        "text": "先观察别人状态，等感觉对了才慢慢加入",
-        "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W3", "score": 1 }
-        ]
-      },
-      {
         "id": "q2_c",
         "text": "找一个具体的切入口，比如吃的喝的行程，稳稳把对话撑起来",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q2_d",
         "text": "不急着融入，只和自己看顺眼的人说话",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q2_b",
+        "text": "先观察别人状态，等感觉对了才慢慢加入",
+        "scoreRules": [
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q2_a",
+        "text": "主动开话题，哪怕有点吵也要先把场子热起来",
+        "scoreRules": [
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -83,32 +131,56 @@
         "id": "q3_a",
         "text": "马上解释清楚，不想让场面一直尴尬下去",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q3_b",
         "text": "表面上说'算了'，心里却会来来回回想很多遍",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q3_c",
         "text": "把前因后果整理明白，只解释关键事实",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q3_d",
         "text": "不会特意解释，误解你的人本来也不重要",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -118,35 +190,59 @@
     "prompt": "做一个重要决定时，你最依赖的是——",
     "options": [
       {
-        "id": "q4_a",
-        "text": "当下的气氛和心情，感觉对了就会动",
-        "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W2", "score": 1 }
-        ]
-      },
-      {
         "id": "q4_b",
         "text": "内心那种说不清但非常强烈的情绪信号",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
-        "id": "q4_c",
-        "text": "规则、逻辑、风险和成功率",
+        "id": "q4_a",
+        "text": "当下的气氛和心情，感觉对了就会动",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q4_d",
         "text": "对人和局势的直觉判断，尤其是谁值得信任",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q4_c",
+        "text": "规则、逻辑、风险和成功率",
+        "scoreRules": [
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       }
     ]
@@ -159,32 +255,56 @@
         "id": "q5_a",
         "text": "会很自然地去找她说话，见缝插针制造存在感",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q5_b",
         "text": "表面没什么变化，但会把很多心情偷偷放大",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q5_c",
         "text": "会默默记住她需要什么，然后用实际行动照顾她",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q5_d",
         "text": "会对她明显和别人不一样，有偏心也不打算藏",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -194,35 +314,59 @@
     "prompt": "你最舒服的工作状态是——",
     "options": [
       {
-        "id": "q6_a",
-        "text": "一边做一边说，身边热热闹闹也不会受影响",
+        "id": "q6_d",
+        "text": "自己定节奏、自己做判断，不喜欢别人插手太多",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q6_b",
         "text": "情绪对了效率就会很高，不对的时候会一下子掉下去",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q6_a",
+        "text": "一边做一边说，身边热热闹闹也不会受影响",
+        "scoreRules": [
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q6_c",
         "text": "有明确流程、标准和正确答案，越清楚越安心",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
-        ]
-      },
-      {
-        "id": "q6_d",
-        "text": "自己定节奏、自己做判断，不喜欢别人插手太多",
-        "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       }
     ]
@@ -235,32 +379,56 @@
         "id": "q7_a",
         "text": "会一直鼓励她，让她不要紧张",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q7_b",
         "text": "很能察觉她的不安，但不一定会直接说破",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q7_c",
         "text": "会认真教她步骤和原理，希望她尽快上手",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q7_d",
         "text": "会先看她有没有潜力，再决定要不要多花时间",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -270,35 +438,59 @@
     "prompt": "你压力很大的时候，更像下面哪一种——",
     "options": [
       {
-        "id": "q8_a",
-        "text": "还是会努力活跃气氛，不想让别人担心",
-        "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W2", "score": 1 }
-        ]
-      },
-      {
-        "id": "q8_b",
-        "text": "嘴上说没事，实际上一个人会越想越难受",
-        "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W3", "score": 1 }
-        ]
-      },
-      {
         "id": "q8_c",
         "text": "会开始列清单、找方法，把混乱重新排好",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q8_a",
+        "text": "还是会努力活跃气氛，不想让别人担心",
+        "scoreRules": [
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q8_d",
         "text": "会变得更冷一点，不想解释，也不想被打扰",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q8_b",
+        "text": "嘴上说没事，实际上一个人会越想越难受",
+        "scoreRules": [
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -311,32 +503,56 @@
         "id": "q9_a",
         "text": "把纸巾和水都递过去，还会努力逗她缓一缓",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q9_b",
         "text": "坐在旁边陪着，不催她，也不急着劝",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q9_c",
         "text": "等她平静一点后，开始帮她梳理到底怎么办",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q9_d",
         "text": "会先有点不耐烦，觉得情绪发泄太久也没意义",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W3", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -346,35 +562,59 @@
     "prompt": "下面哪句话最像你的处事方式——",
     "options": [
       {
+        "id": "q10_d",
+        "text": "喜不喜欢、值不值得，自己心里有数就够了",
+        "scoreRules": [
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
         "id": "q10_a",
         "text": "先把气氛弄好，事情总有办法",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q10_b",
         "text": "很多感受其实不会说出来",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q10_c",
         "text": "能讲清楚的东西就不要靠猜",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
-        ]
-      },
-      {
-        "id": "q10_d",
-        "text": "喜不喜欢、值不值得，自己心里有数就够了",
-        "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       }
     ]
@@ -387,32 +627,56 @@
         "id": "q11_a",
         "text": "明明很热情，但有时会突然太闹腾",
         "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q11_b",
         "text": "看起来轻描淡写，其实情绪已经翻了很多次",
         "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q11_c",
         "text": "说话太讲逻辑，像在处理问题而不是安慰人",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W4", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q11_d",
         "text": "对不重要的人就是会冷淡，甚至有点mean",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -422,35 +686,59 @@
     "prompt": "你最容易被哪种人打动——",
     "options": [
       {
-        "id": "q12_a",
-        "text": "能接住你的热情，也愿意陪你一起热闹的人",
-        "scoreRules": [
-          { "code": "W1", "score": 2 },
-          { "code": "W2", "score": 1 }
-        ]
-      },
-      {
-        "id": "q12_b",
-        "text": "能看穿你没说出口的情绪，却不逼你表达的人",
-        "scoreRules": [
-          { "code": "W2", "score": 2 },
-          { "code": "W3", "score": 1 }
-        ]
-      },
-      {
         "id": "q12_c",
         "text": "做事认真、稳定、靠谱，让你觉得放心的人",
         "scoreRules": [
-          { "code": "W3", "score": 2 },
-          { "code": "W1", "score": 1 }
+          {
+            "code": "W3",
+            "score": 2
+          },
+          {
+            "code": "W1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q12_d",
         "text": "明明很强，却愿意被你偏爱和区别对待的人",
         "scoreRules": [
-          { "code": "W4", "score": 2 },
-          { "code": "W2", "score": 1 }
+          {
+            "code": "W4",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q12_a",
+        "text": "能接住你的热情，也愿意陪你一起热闹的人",
+        "scoreRules": [
+          {
+            "code": "W1",
+            "score": 2
+          },
+          {
+            "code": "W2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q12_b",
+        "text": "能看穿你没说出口的情绪，却不逼你表达的人",
+        "scoreRules": [
+          {
+            "code": "W2",
+            "score": 2
+          },
+          {
+            "code": "W3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -460,35 +748,59 @@
     "prompt": "刚搬到一个新地方，附近开了很多新店新餐厅。你更可能——",
     "options": [
       {
-        "id": "q13_a",
-        "text": "先不急着去，慢慢看，挑自己顺眼的再试",
-        "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
-        ]
-      },
-      {
-        "id": "q13_b",
-        "text": "很快把周边摸清楚，知道哪家最好、哪家最稳",
-        "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
-        ]
-      },
-      {
         "id": "q13_c",
         "text": "可能因为某种心情突然走进去，喜欢就会记很久",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q13_d",
         "text": "会先看这里对孩子、朋友或者同行的人是否方便",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q13_a",
+        "text": "先不急着去，慢慢看，挑自己顺眼的再试",
+        "scoreRules": [
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q13_b",
+        "text": "很快把周边摸清楚，知道哪家最好、哪家最稳",
+        "scoreRules": [
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       }
     ]
@@ -501,32 +813,56 @@
         "id": "q14_a",
         "text": "有点不高兴，但会安静地重新适应",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q14_b",
         "text": "直接指出问题，要求按更合理的方式来",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q14_c",
         "text": "表面很淡，心里其实一下子被情绪带跑",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q14_d",
         "text": "先确保所有人都没受影响，再处理自己的不爽",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -536,35 +872,59 @@
     "prompt": "面对一个你不熟悉的新软件、新设备或新规则，你更像——",
     "options": [
       {
-        "id": "q15_a",
-        "text": "会有点慢，不是不会，只是不想被催",
-        "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I4", "score": 1 }
-        ]
-      },
-      {
         "id": "q15_b",
         "text": "先把规则研究明白，再高效上手",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q15_c",
         "text": "如果没有感觉就会先放着，宁愿凭自己的节奏来",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q15_d",
         "text": "会担心别人也不会用，于是顺手把大家一起照顾到",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q15_a",
+        "text": "会有点慢，不是不会，只是不想被催",
+        "scoreRules": [
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       }
     ]
@@ -577,32 +937,56 @@
         "id": "q16_a",
         "text": "对别人都很克制，只在她面前慢慢露出依赖",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q16_b",
         "text": "嘴上不说软话，但会站在她那边",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q16_c",
         "text": "情绪会越来越深，深到自己都没法轻易抽离",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q16_d",
         "text": "会忍不住照顾她，怕她没吃好、没睡好、没被好好对待",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -612,35 +996,59 @@
     "prompt": "你在群体里更常扮演的角色是——",
     "options": [
       {
+        "id": "q17_d",
+        "text": "负责留意谁累了、谁掉队了、谁需要被顾到的人",
+        "scoreRules": [
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
+        ]
+      },
+      {
         "id": "q17_a",
         "text": "不一定最活跃，但有自己的节奏和边界",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q17_b",
         "text": "能拍板、能推进、能让事情往前走的人",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q17_c",
         "text": "不太说话，但情绪和观察都很深的人",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I2", "score": 1 }
-        ]
-      },
-      {
-        "id": "q17_d",
-        "text": "负责留意谁累了、谁掉队了、谁需要被顾到的人",
-        "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -653,32 +1061,56 @@
         "id": "q18_a",
         "text": "先冷静观察，不会立刻站出来",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q18_b",
         "text": "哪怕对方比你强势，也会直接怼回去",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q18_c",
         "text": "会把那种委屈记得很深，替对方难受很久",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q18_d",
         "text": "会先把人护住，再去处理后面的事",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -688,35 +1120,59 @@
     "prompt": "哪种生活环境最让你舒服——",
     "options": [
       {
-        "id": "q19_a",
-        "text": "节奏慢一点，有花、有光、有自己熟悉的小世界",
-        "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
-        ]
-      },
-      {
-        "id": "q19_b",
-        "text": "一切高效有序，东西放在哪里、事情怎么做都很清楚",
-        "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
-        ]
-      },
-      {
         "id": "q19_c",
         "text": "有足够的独处空间，能容纳很浓的情绪和灵感",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q19_a",
+        "text": "节奏慢一点，有花、有光、有自己熟悉的小世界",
+        "scoreRules": [
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q19_d",
         "text": "安全、温暖、有人来有人往，但每个人都被照顾得很好",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q19_b",
+        "text": "一切高效有序，东西放在哪里、事情怎么做都很清楚",
+        "scoreRules": [
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       }
     ]
@@ -729,32 +1185,56 @@
         "id": "q20_a",
         "text": "以为你是懒，其实只是节奏慢、慢热",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q20_b",
         "text": "以为你太强势，其实你只是讨厌混乱和不公",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q20_c",
         "text": "以为你冷淡，其实你只是情绪不愿意给太多人看",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q20_d",
         "text": "以为你很好说话，其实你在保护别人的事上非常认真",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -764,35 +1244,59 @@
     "prompt": "你更像哪种表达喜欢的人——",
     "options": [
       {
-        "id": "q21_a",
-        "text": "会默默靠近，偶尔撒个娇，但只对特别的人这样",
-        "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
-        ]
-      },
-      {
         "id": "q21_b",
         "text": "会用'我站你这边'的方式表达，而不是说甜话",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
-        ]
-      },
-      {
-        "id": "q21_c",
-        "text": "爱会越来越重，重到自己也控制不了",
-        "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q21_d",
         "text": "会把喜欢变成日常照顾，体现在很多小事里",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q21_a",
+        "text": "会默默靠近，偶尔撒个娇，但只对特别的人这样",
+        "scoreRules": [
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q21_c",
+        "text": "爱会越来越重，重到自己也控制不了",
+        "scoreRules": [
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       }
     ]
@@ -805,32 +1309,56 @@
         "id": "q22_a",
         "text": "先蹲下来陪着她，慢慢等她缓过来",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q22_b",
         "text": "先把规矩讲清楚，让她知道什么能做什么不能做",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q22_c",
         "text": "会一下子被她的情绪刺到，表面淡定但心里很在意",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q22_d",
         "text": "很自然地把她抱起来、安抚、哄睡、收拾残局全做完",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
@@ -840,35 +1368,59 @@
     "prompt": "工作里最让你受不了的是——",
     "options": [
       {
-        "id": "q23_a",
-        "text": "不停被催、被打乱、没有自己的节奏",
+        "id": "q23_d",
+        "text": "只顾效率，不顾人的状态和承受能力",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
-        ]
-      },
-      {
-        "id": "q23_b",
-        "text": "明明有更对的方法，却没人愿意执行",
-        "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q23_c",
         "text": "没有感受、没有审美、没有一点情绪空间",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
-        "id": "q23_d",
-        "text": "只顾效率，不顾人的状态和承受能力",
+        "id": "q23_a",
+        "text": "不停被催、被打乱、没有自己的节奏",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
+        ]
+      },
+      {
+        "id": "q23_b",
+        "text": "明明有更对的方法，却没人愿意执行",
+        "scoreRules": [
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       }
     ]
@@ -881,32 +1433,56 @@
         "id": "q24_a",
         "text": "慢一点没关系，按自己的步调活就好",
         "scoreRules": [
-          { "code": "I1", "score": 2 },
-          { "code": "I3", "score": 1 }
+          {
+            "code": "I1",
+            "score": 2
+          },
+          {
+            "code": "I3",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q24_b",
         "text": "该说的话就要说，该顶的时候就要顶",
         "scoreRules": [
-          { "code": "I2", "score": 2 },
-          { "code": "I4", "score": 1 }
+          {
+            "code": "I2",
+            "score": 2
+          },
+          {
+            "code": "I4",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q24_c",
         "text": "很多最深的爱，其实都藏在沉默里",
         "scoreRules": [
-          { "code": "I3", "score": 2 },
-          { "code": "I1", "score": 1 }
+          {
+            "code": "I3",
+            "score": 2
+          },
+          {
+            "code": "I1",
+            "score": 1
+          }
         ]
       },
       {
         "id": "q24_d",
         "text": "只要是自己放进心里的人，就会想认真护住",
         "scoreRules": [
-          { "code": "I4", "score": 2 },
-          { "code": "I2", "score": 1 }
+          {
+            "code": "I4",
+            "score": 2
+          },
+          {
+            "code": "I2",
+            "score": 1
+          }
         ]
       }
     ]
