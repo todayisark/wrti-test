@@ -1,7 +1,7 @@
 [
   {
     "id": "q1",
-    "prompt": "A friend texts you late at night saying they had a terrible day and sent a crying emoji. Your first reaction is——",
+    "prompt": "A friend texts you at midnight saying today was awful, with a crying emoji. Your first reaction is—",
     "options": [
       {
         "id": "q1_a",
@@ -15,7 +15,7 @@
       },
       {
         "id": "q1_b",
-        "text": "Listen to them quietly, speak lightly, but worry deeply about how much they're hurting",
+        "text": "Stay with them in chat. You don't sound heavy, but you keep wondering how much they're hurting.",
         "scoreRules": [
           {
             "code": "W2",
@@ -47,7 +47,7 @@
   },
   {
     "id": "q2",
-    "prompt": "When a gathering just starts and no one's quite comfortable yet, the vibe is a bit awkward. You usually——",
+    "prompt": "At the start of a gathering, people are still unfamiliar and the vibe is a bit cold. You usually—",
     "options": [
       {
         "id": "q2_c",
@@ -81,7 +81,7 @@
       },
       {
         "id": "q2_a",
-        "text": "Proactively start conversations and heat up the room, even if it gets a bit loud",
+        "text": "Start topics proactively. Even if it gets a little noisy, you first try to warm up the room.",
         "scoreRules": [
           {
             "code": "W1",
@@ -93,7 +93,7 @@
   },
   {
     "id": "q3",
-    "prompt": "You've been misunderstood and the other person has already told others. You're more likely to——",
+    "prompt": "You've been misunderstood, and the other person has even passed it on to others. You're more likely to—",
     "options": [
       {
         "id": "q3_a",
@@ -127,7 +127,7 @@
       },
       {
         "id": "q3_d",
-        "text": "Not a big deal to explain; people who misunderstand you weren't that important anyway",
+        "text": "Not explain on purpose; people who misunderstand you were never that important anyway.",
         "scoreRules": [
           {
             "code": "W4",
@@ -139,7 +139,7 @@
   },
   {
     "id": "q4",
-    "prompt": "When making an important decision, what do you rely on most——",
+    "prompt": "When making an important decision, you rely most on—",
     "options": [
       {
         "id": "q4_b",
@@ -157,7 +157,7 @@
       },
       {
         "id": "q4_a",
-        "text": "The current atmosphere and mood; if it feels right, you'll move forward",
+        "text": "The atmosphere and mood in the moment; if it feels right, you move.",
         "scoreRules": [
           {
             "code": "W1",
@@ -201,7 +201,7 @@
   },
   {
     "id": "q5",
-    "prompt": "When you like someone, what's your most typical state——",
+    "prompt": "When you like someone, the state you most easily fall into is—",
     "options": [
       {
         "id": "q5_a",
@@ -247,7 +247,7 @@
   },
   {
     "id": "q6",
-    "prompt": "Your most comfortable work state is——",
+    "prompt": "Your most comfortable work state is—",
     "options": [
       {
         "id": "q6_d",
@@ -261,7 +261,7 @@
       },
       {
         "id": "q6_b",
-        "text": "When your mood is right your efficiency is high; when it's off, it crashes completely",
+        "text": "When your mood is right, your efficiency shoots up. When it's off, it drops fast.",
         "scoreRules": [
           {
             "code": "W2",
@@ -293,7 +293,7 @@
   },
   {
     "id": "q7",
-    "prompt": "If you're responsible for onboarding a new person, you'd be the kind of mentor who——",
+    "prompt": "If you're responsible for mentoring a newcomer, you'd be the kind of senior who—",
     "options": [
       {
         "id": "q7_a",
@@ -339,7 +339,7 @@
   },
   {
     "id": "q8",
-    "prompt": "When you're under a lot of stress, you're more like——",
+    "prompt": "When you're under a lot of pressure, you're more like—",
     "options": [
       {
         "id": "q8_c",
@@ -373,7 +373,7 @@
       },
       {
         "id": "q8_b",
-        "text": "You say it's fine, but alone you spiral thinking about it more and more",
+        "text": "Say you're fine, but when you're alone you keep replaying it and feel worse.",
         "scoreRules": [
           {
             "code": "W2",
@@ -385,11 +385,11 @@
   },
   {
     "id": "q9",
-    "prompt": "When someone cries hard in front of you, you'd most likely——",
+    "prompt": "When someone cries hard in front of you, you're most likely to—",
     "options": [
       {
         "id": "q9_a",
-        "text": "Hand them tissues and water, and try to lighten the mood",
+        "text": "Hand them tissues and water, and try to make them smile a little first.",
         "scoreRules": [
           {
             "code": "W1",
@@ -419,7 +419,7 @@
       },
       {
         "id": "q9_d",
-        "text": "Feel a bit impatient; you think prolonged emotional venting doesn't help",
+        "text": "Feel a little impatient first, thinking prolonged venting does not really help.",
         "scoreRules": [
           {
             "code": "W4",
@@ -431,7 +431,7 @@
   },
   {
     "id": "q10",
-    "prompt": "Which statement sounds most like your way of handling things——",
+    "prompt": "Which sentence sounds most like your way of handling things—",
     "options": [
       {
         "id": "q10_d",
@@ -477,7 +477,7 @@
   },
   {
     "id": "q11",
-    "prompt": "If someone says you're 'hard to understand,' it's probably because——",
+    "prompt": "If people say you're \"a little hard to read,\" it's most likely because—",
     "options": [
       {
         "id": "q11_a",
@@ -523,7 +523,7 @@
   },
   {
     "id": "q12",
-    "prompt": "You're most easily moved by someone who——",
+    "prompt": "You're most likely to be moved by someone who—",
     "options": [
       {
         "id": "q12_c",
@@ -541,7 +541,7 @@
       },
       {
         "id": "q12_d",
-        "text": "Is clearly strong but willing to be your favorite person and let you treat them specially",
+        "text": "Clearly strong, yet willing to let you favor them and treat them differently.",
         "scoreRules": [
           {
             "code": "W4",
@@ -585,11 +585,11 @@
   },
   {
     "id": "q13",
-    "prompt": "After moving to a new neighborhood with lots of new shops and restaurants, you're more likely to——",
+    "prompt": "After moving to a new area with lots of new shops and restaurants, you're more likely to—",
     "options": [
       {
         "id": "q13_c",
-        "text": "Suddenly feel like visiting somewhere based on a mood, and if you like it you'll remember it forever",
+        "text": "You might walk in on impulse because of a mood; if you like it, it stays with you for a long time.",
         "scoreRules": [
           {
             "code": "I3",
@@ -599,7 +599,7 @@
       },
       {
         "id": "q13_d",
-        "text": "First check if it's convenient for kids, friends, or people you're close with",
+        "text": "First check whether it's convenient for kids, friends, or whoever you're with.",
         "scoreRules": [
           {
             "code": "I4",
@@ -631,7 +631,7 @@
   },
   {
     "id": "q14",
-    "prompt": "When someone suddenly disrupts your carefully made plans, you usually——",
+    "prompt": "If someone suddenly disrupts your original plan, you usually—",
     "options": [
       {
         "id": "q14_a",
@@ -649,7 +649,7 @@
       },
       {
         "id": "q14_b",
-        "text": "Point out the problem directly and demand a more logical approach",
+        "text": "Point out the problem directly and ask to handle it in a more reasonable way.",
         "scoreRules": [
           {
             "code": "I2",
@@ -693,7 +693,7 @@
   },
   {
     "id": "q15",
-    "prompt": "Facing new software, equipment, or rules you're unfamiliar with, you're more like——",
+    "prompt": "When facing unfamiliar software, devices, or new rules, you're more like—",
     "options": [
       {
         "id": "q15_b",
@@ -739,7 +739,7 @@
   },
   {
     "id": "q16",
-    "prompt": "If you care deeply about someone, you're more likely to——",
+    "prompt": "If you care deeply about someone, you're more likely to—",
     "options": [
       {
         "id": "q16_a",
@@ -771,7 +771,7 @@
       },
       {
         "id": "q16_c",
-        "text": "Your feelings grow deeper and deeper, so deep you can't easily step away",
+        "text": "Your feelings grow deeper and deeper, so deep that even you struggle to pull away.",
         "scoreRules": [
           {
             "code": "I3",
@@ -801,7 +801,7 @@
   },
   {
     "id": "q17",
-    "prompt": "In a group, the role you typically play is——",
+    "prompt": "In a group, the role you most often play is—",
     "options": [
       {
         "id": "q17_d",
@@ -835,7 +835,7 @@
       },
       {
         "id": "q17_c",
-        "text": "Quiet but deeply observant and emotionally aware",
+        "text": "Not very talkative, but emotionally deep and highly observant.",
         "scoreRules": [
           {
             "code": "I3",
@@ -847,11 +847,11 @@
   },
   {
     "id": "q18",
-    "prompt": "If someone is being treated unfairly, your reaction would be——",
+    "prompt": "If someone is treated unfairly, your reaction would be—",
     "options": [
       {
         "id": "q18_a",
-        "text": "Calmly observe first; you won't immediately stand up",
+        "text": "Observe calmly first; you will not step out immediately.",
         "scoreRules": [
           {
             "code": "I1",
@@ -909,7 +909,7 @@
   },
   {
     "id": "q19",
-    "prompt": "Which living environment makes you most comfortable——",
+    "prompt": "Which kind of living environment makes you feel most at ease—",
     "options": [
       {
         "id": "q19_c",
@@ -955,7 +955,7 @@
   },
   {
     "id": "q20",
-    "prompt": "People most easily misunderstand you in this way——",
+    "prompt": "The thing people most easily misunderstand about you is—",
     "options": [
       {
         "id": "q20_a",
@@ -1001,7 +1001,7 @@
   },
   {
     "id": "q21",
-    "prompt": "You tend to express affection by——",
+    "prompt": "When expressing affection, you're more like someone who—",
     "options": [
       {
         "id": "q21_b",
@@ -1047,7 +1047,7 @@
       },
       {
         "id": "q21_c",
-        "text": "Your love grows heavier and heavier, until you can't control it",
+        "text": "Love keeps growing deeper, deep enough that even you cannot control it.",
         "scoreRules": [
           {
             "code": "I3",
@@ -1063,7 +1063,7 @@
   },
   {
     "id": "q22",
-    "prompt": "If a little kid suddenly throws a tantrum at home, you'd most likely——",
+    "prompt": "If a child at home suddenly throws a tantrum, you're most likely to—",
     "options": [
       {
         "id": "q22_a",
@@ -1097,7 +1097,7 @@
       },
       {
         "id": "q22_d",
-        "text": "Naturally pick them up, soothe them, rock them to sleep, and clean up the mess",
+        "text": "Naturally pick them up, soothe them, get them to sleep, and clean up the aftermath.",
         "scoreRules": [
           {
             "code": "I4",
@@ -1109,7 +1109,7 @@
   },
   {
     "id": "q23",
-    "prompt": "What bothers you most at work——",
+    "prompt": "At work, what you can't stand the most is—",
     "options": [
       {
         "id": "q23_d",
@@ -1117,7 +1117,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 1
+            "score": 2
           }
         ]
       },
@@ -1155,7 +1155,7 @@
   },
   {
     "id": "q24",
-    "prompt": "Which statement sounds most like you——",
+    "prompt": "Which sentence sounds most like you—",
     "options": [
       {
         "id": "q24_a",
