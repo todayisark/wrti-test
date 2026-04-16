@@ -14,6 +14,7 @@ import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
 import quizZhCN from '@/i18n/dictionaries/quiz/zh-CN.json';
 import quizEnUS from '@/i18n/dictionaries/quiz/en-US.json';
 import questionsEnUS from '@/features/quiz/data/questions.en-US.json';
+import { generateUUID } from '@/lib/uuid';
 
 type QuizDictionary = typeof quizZhCN;
 type LocalizedQuestion = (typeof QUESTIONS)[number];
@@ -48,7 +49,7 @@ const getOrCreateUserUUID = (): string => {
     return existing;
   }
 
-  const generated = crypto.randomUUID();
+  const generated = generateUUID();
   localStorage.setItem(key, generated);
   return generated;
 };
