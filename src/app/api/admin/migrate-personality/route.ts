@@ -5,10 +5,10 @@
  */
 
 import { NextResponse } from 'next/server';
+import { createClient as createSupabaseClient } from '@supabase/supabase-js';
 import { calculateScores, getFinalCharactersWithTiebreak } from '@/features/quiz/server/scoring';
 import { QUESTIONS } from '@/features/quiz/constants';
 import type { QuizOption } from '@/features/quiz/types';
-import { createClient } from '@/lib/supabase/server';
 
 export const POST = async (request: Request) => {
   try {
@@ -20,7 +20,11 @@ export const POST = async (request: Request) => {
       return NextResponse.json({ success: false, error: '未授权访问' }, { status: 401 });
     }
 
-    const supabase = await createClient();
+    // 使用 SERVICE_ROLE_KEY 创建无 RLS 限制的客户端
+    const supabase = createSupabaseClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!,
+    );
 
     // 获取所有没有 personality_result 的记录
     const { data: records, error: fetchError } = await supabase
