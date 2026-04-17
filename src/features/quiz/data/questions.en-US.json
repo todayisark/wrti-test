@@ -1,139 +1,79 @@
 [
   {
     "id": "q1",
-    "prompt": "A friend texts you at midnight saying today was awful, with a crying emoji. Your first reaction is—",
+    "prompt": "A friend messages you late at night saying today was awful, with a crying emoji. Your first reaction is—",
     "options": [
       {
         "id": "q1_a",
-        "text": "Call them on voice chat right away and try to make them laugh first",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Immediately call her, cheer her up first and then talk",
+        "scoreRules": [{ "code": "W1", "score": 3 }]
       },
       {
         "id": "q1_b",
-        "text": "Stay with them in chat. You don't sound heavy, but you keep wondering how much they're hurting.",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Stay and chat with her, not saying anything heavy on the surface, but constantly thinking about how upset she is",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q1_c",
-        "text": "Ask what happened and help them sort things out piece by piece",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Ask clearly what happened and try to help her sort things out",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q1_d",
-        "text": "Judge whether this deserves such distress, then decide if it's worth addressing",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "First judge whether it’s worth being that upset, then decide whether to get involved",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q2",
-    "prompt": "At the start of a gathering, people are still unfamiliar and the vibe is a bit cold. You usually—",
+    "prompt": "At the beginning of a gathering, people aren’t familiar yet and the atmosphere feels a bit awkward. You usually—",
     "options": [
       {
         "id": "q2_c",
-        "text": "Find a concrete topic like food, drinks, or plans to steadily carry the conversation",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Find a concrete topic, like food or plans, and steadily keep the conversation going",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q2_d",
-        "text": "Don't rush to fit in; just talk with people you actually click with",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Don’t rush to blend in, only talk to people you feel comfortable with",
+        "scoreRules": [{ "code": "W4", "score": 3 }]
       },
       {
         "id": "q2_b",
-        "text": "Observe others' states first, then slowly join in when the timing feels right",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "Observe others first, then join in slowly when it feels right",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q2_a",
-        "text": "Start topics proactively. Even if it gets a little noisy, you first try to warm up the room.",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 3
-          }
-        ]
+        "text": "Take the initiative to start topics, even if it’s a bit noisy, just to warm things up",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       }
     ]
   },
   {
     "id": "q3",
-    "prompt": "You've been misunderstood, and the other person has even passed it on to others. You're more likely to—",
+    "prompt": "You’ve been misunderstood, and the other person has even told others. You are more likely to—",
     "options": [
       {
         "id": "q3_a",
-        "text": "Explain immediately to clear things up and avoid prolonging the awkwardness",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Explain immediately, not wanting the awkwardness to linger",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q3_b",
-        "text": "Say 'never mind' on the surface, but replay it over and over in your head",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "Say “forget it” on the surface, but replay it in your mind over and over",
+        "scoreRules": [{ "code": "W2", "score": 3 }]
       },
       {
         "id": "q3_c",
-        "text": "Organize the backstory clearly and explain only the key facts",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Sort out the whole situation and explain only the key facts",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q3_d",
-        "text": "Not explain on purpose; people who misunderstand you were never that important anyway.",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Not bother explaining, thinking people who misunderstand you aren’t important anyway",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       }
     ]
   },
@@ -143,1059 +83,543 @@
     "options": [
       {
         "id": "q4_b",
-        "text": "A powerful emotional signal from deep within that you can't quite explain",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          },
-          {
-            "code": "W4",
-            "score": 1
-          }
-        ]
+        "text": "A strong but hard-to-explain inner feeling",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q4_a",
-        "text": "The atmosphere and mood in the moment; if it feels right, you move.",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Real-time interaction, others’ feedback, and changes in atmosphere",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q4_d",
-        "text": "Your intuitive judgment about people and situations, especially who's trustworthy",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Your judgment of people and situations, especially who is trustworthy",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       },
       {
         "id": "q4_c",
-        "text": "Rules, logic, risks, and success rates",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          },
-          {
-            "code": "W4",
-            "score": 1
-          }
-        ]
+        "text": "Rules, logic, risks, and probability of success",
+        "scoreRules": [{ "code": "W3", "score": 3 }]
       }
     ]
   },
   {
     "id": "q5",
-    "prompt": "When you like someone, the state you most easily fall into is—",
+    "prompt": "When you like someone, your most likely state is—",
     "options": [
       {
         "id": "q5_a",
-        "text": "You naturally gravitate to talking with them, finding small ways to create presence",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Naturally finding ways to talk to her and create chances to be noticed",
+        "scoreRules": [{ "code": "W1", "score": 3 }]
       },
       {
         "id": "q5_b",
-        "text": "Your surface doesn't change much, but you amplify your feelings internally",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "No obvious change outwardly, but secretly amplifying your feelings",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q5_c",
-        "text": "You silently remember what they need and care for them through actions",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Quietly remembering her needs and taking care of her through actions",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q5_d",
-        "text": "You treat them distinctly different from others and don't hide your favoritism",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Treating her obviously differently from others, and not hiding favoritism",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q6",
-    "prompt": "Your most comfortable work state is—",
+    "prompt": "Your most comfortable working state is—",
     "options": [
       {
         "id": "q6_d",
-        "text": "You set your own pace and make your own calls; you don't like others interfering",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Setting your own pace and making your own decisions, not liking interference",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       },
       {
         "id": "q6_b",
-        "text": "When your mood is right, your efficiency shoots up. When it's off, it drops fast.",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "When your mood is right, efficiency is high; when it’s not, it drops suddenly",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q6_a",
-        "text": "You can work while talking, unbothered by a lively environment around you",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Working while talking; a lively environment doesn’t affect you",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q6_c",
-        "text": "Clear processes, standards, and right answers; the clearer the better",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Having clear processes, standards, and correct answers makes you feel secure",
+        "scoreRules": [{ "code": "W3", "score": 3 }]
       }
     ]
   },
   {
     "id": "q7",
-    "prompt": "If you're responsible for mentoring a newcomer, you'd be the kind of senior who—",
+    "prompt": "If you were guiding a newcomer, you would be more like—",
     "options": [
       {
         "id": "q7_a",
-        "text": "Keeps encouraging them and telling them not to stress",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Constantly encouraging her so she doesn’t feel nervous",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q7_b",
-        "text": "Perceives their anxiety well but doesn't necessarily name it",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "Able to sense her unease, but not necessarily pointing it out directly",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q7_c",
-        "text": "Teaches them steps and reasoning carefully, hoping they get up to speed quickly",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Carefully teaching steps and principles so she can get started quickly",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q7_d",
-        "text": "Assesses their potential first, then decides how much time to invest",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "First observing her potential before deciding how much effort to invest",
+        "scoreRules": [{ "code": "W4", "score": 3 }]
       }
     ]
   },
   {
     "id": "q8",
-    "prompt": "When you're under a lot of pressure, you're more like—",
+    "prompt": "When you’re under a lot of pressure, you are more like—",
     "options": [
       {
         "id": "q8_c",
-        "text": "You start making lists and finding solutions, putting things back in order",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "Start making lists and finding solutions, reorganizing the chaos",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q8_a",
-        "text": "Still trying to keep things light, not wanting others to worry",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Still try to keep the atmosphere lively so others won’t worry",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q8_d",
-        "text": "You get colder, don't want to explain, and prefer not to be bothered",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Become a bit colder, not wanting to explain or be disturbed",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       },
       {
         "id": "q8_b",
-        "text": "Say you're fine, but when you're alone you keep replaying it and feel worse.",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Say you’re fine, but actually overthink and feel worse when alone",
+        "scoreRules": [{ "code": "W2", "score": 3 }]
       }
     ]
   },
   {
     "id": "q9",
-    "prompt": "When someone cries hard in front of you, you're most likely to—",
+    "prompt": "If someone cries hard in front of you, you are most likely to—",
     "options": [
       {
         "id": "q9_a",
-        "text": "Hand them tissues and water, and try to make them smile a little first.",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Hand her tissues and water, and try to cheer her up a little",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q9_b",
-        "text": "Sit beside them, don't rush them, and don't push advice",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "Sit beside her quietly, not rushing or pushing her to stop",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q9_c",
-        "text": "Once they're more stable, help them sort through what to do",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 3
-          }
-        ]
+        "text": "Wait until she calms down, then help her figure out what to do",
+        "scoreRules": [{ "code": "W3", "score": 3 }]
       },
       {
         "id": "q9_d",
-        "text": "Feel a little impatient first, thinking prolonged venting does not really help.",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "Feel a bit impatient, thinking too much emotional release is pointless",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q10",
-    "prompt": "Which sentence sounds most like your way of handling things—",
+    "prompt": "Which sentence best describes your way of handling things—",
     "options": [
       {
         "id": "q10_d",
-        "text": "Whether I like it and whether it's worth it—I know in my heart",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "First judge whether it’s worth investing; if not, I won’t keep wasting energy",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       },
       {
         "id": "q10_a",
-        "text": "Get the vibe right first, the rest will work itself out",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "Fix the atmosphere first; everything else will work out somehow",
+        "scoreRules": [{ "code": "W1", "score": 3 }]
       },
       {
         "id": "q10_b",
-        "text": "So much of what I feel doesn't actually get said",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "I have a lot of feelings, but I’m not good at expressing them",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       },
       {
         "id": "q10_c",
-        "text": "If something can be explained clearly, don't rely on guessing",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "If something can be explained clearly, don’t leave it to guesswork",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       }
     ]
   },
   {
     "id": "q11",
-    "prompt": "If people say you're \"a little hard to read,\" it's most likely because—",
+    "prompt": "If people say you’re “a bit hard to understand,” it’s most likely because—",
     "options": [
       {
         "id": "q11_a",
-        "text": "You're enthusiastic but sometimes suddenly too noisy",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          }
-        ]
+        "text": "You’re actually warm, but sometimes come off as too energetic or loud",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q11_b",
-        "text": "You seem understated, but your emotions have actually flipped many times inside",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          }
-        ]
+        "text": "You seem indifferent, but internally you replay and magnify details",
+        "scoreRules": [{ "code": "W2", "score": 3 }]
       },
       {
         "id": "q11_c",
-        "text": "You're very logic-focused, like you're solving a problem rather than offering comfort",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          }
-        ]
+        "text": "You speak too logically, like solving problems instead of comforting people",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q11_d",
-        "text": "You're just cold to people who don't matter, sometimes even a bit mean",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          }
-        ]
+        "text": "You can be sharp with unimportant people, but very protective of your own",
+        "scoreRules": [{ "code": "W4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q12",
-    "prompt": "You're most likely to be moved by someone who—",
+    "prompt": "What kind of person moves you the most—",
     "options": [
       {
         "id": "q12_c",
-        "text": "Is sincere, stable, reliable, and makes you feel secure",
-        "scoreRules": [
-          {
-            "code": "W3",
-            "score": 2
-          },
-          {
-            "code": "W1",
-            "score": 1
-          }
-        ]
+        "text": "Someone reliable, steady, and serious, who makes you feel at ease",
+        "scoreRules": [{ "code": "W3", "score": 2 }]
       },
       {
         "id": "q12_d",
-        "text": "Clearly strong, yet willing to let you favor them and treat them differently.",
-        "scoreRules": [
-          {
-            "code": "W4",
-            "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Someone independent and strong, yet willing to be specially cherished by you",
+        "scoreRules": [{ "code": "W4", "score": 3 }]
       },
       {
         "id": "q12_a",
-        "text": "Can match your enthusiasm and join you in the fun",
-        "scoreRules": [
-          {
-            "code": "W1",
-            "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
-          }
-        ]
+        "text": "Someone who matches your energy and enjoys being lively with you",
+        "scoreRules": [{ "code": "W1", "score": 2 }]
       },
       {
         "id": "q12_b",
-        "text": "Can see your unspoken emotions but doesn't force you to express them",
-        "scoreRules": [
-          {
-            "code": "W2",
-            "score": 2
-          },
-          {
-            "code": "W3",
-            "score": 1
-          }
-        ]
+        "text": "Someone who understands your unspoken emotions and takes the initiative",
+        "scoreRules": [{ "code": "W2", "score": 2 }]
       }
     ]
   },
   {
     "id": "q13",
-    "prompt": "After moving to a new area with lots of new shops and restaurants, you're more likely to—",
+    "prompt": "After moving to a new place with many shops and restaurants nearby, you are more likely to—",
     "options": [
       {
         "id": "q13_c",
-        "text": "You might walk in on impulse because of a mood; if you like it, it stays with you for a long time.",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "Walk in on impulse depending on your mood, remembering both good and bad experiences",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q13_d",
-        "text": "First check whether it's convenient for kids, friends, or whoever you're with.",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "Ask companions for opinions, trying to find something everyone likes",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       },
       {
         "id": "q13_a",
-        "text": "Not rush; slowly check things out and try places that appeal to you",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "Take your time, observe first, and try places that feel right to you",
+        "scoreRules": [{ "code": "I1", "score": 3 }]
       },
       {
         "id": "q13_b",
-        "text": "Quickly get familiar with the area, knowing which places are best and most reliable",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Check reviews or ask for recommendations before deciding",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       }
     ]
   },
   {
     "id": "q14",
-    "prompt": "If someone suddenly disrupts your original plan, you usually—",
+    "prompt": "If someone suddenly disrupts your planned schedule, you usually—",
     "options": [
       {
         "id": "q14_a",
-        "text": "Feel a bit unhappy, but quietly adapt to the change",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
-          }
-        ]
+        "text": "Feel a bit unhappy but quietly adapt",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q14_b",
-        "text": "Point out the problem directly and ask to handle it in a more reasonable way.",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "Point out the issue directly and demand a more reasonable solution",
+        "scoreRules": [{ "code": "I2", "score": 3 }]
       },
       {
         "id": "q14_c",
-        "text": "Act unaffected, but your emotions actually spiral immediately",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
-          }
-        ]
+        "text": "Seem calm on the surface, but hold onto dissatisfaction for a long time",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q14_d",
-        "text": "Make sure everyone else is fine first, then deal with your own frustration",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
-          }
-        ]
+        "text": "Accept it and come up with a new plan that works for everyone",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q15",
-    "prompt": "When facing unfamiliar software, devices, or new rules, you're more like—",
+    "prompt": "When facing unfamiliar software, devices, or rules, you are more like—",
     "options": [
       {
         "id": "q15_b",
-        "text": "You study the rules thoroughly first, then pick it up efficiently",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Study the rules first, then get up to speed efficiently",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q15_c",
-        "text": "If it doesn't feel right you'll put it aside and follow your own pace",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "Start using it based on your own understanding and figure things out later",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q15_d",
-        "text": "Worry that others won't know how to use it, so you help everyone figure it out",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Learn it yourself first, then help others learn it too",
+        "scoreRules": [{ "code": "I4", "score": 3 }]
       },
       {
         "id": "q15_a",
-        "text": "You're a bit slow, not because you can't, just because you don't like being rushed",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "Learn and use it at your own pace, not worrying much about efficiency or rules",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       }
     ]
   },
   {
     "id": "q16",
-    "prompt": "If you care deeply about someone, you're more likely to—",
+    "prompt": "If you care deeply about someone, you are more likely to—",
     "options": [
       {
         "id": "q16_a",
-        "text": "Be reserved with others, gradually showing your dependence only with them",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
-          }
-        ]
+        "text": "Keep boundaries with others, but slowly show dependence only to her",
+        "scoreRules": [{ "code": "I1", "score": 3 }]
       },
       {
         "id": "q16_b",
-        "text": "Not say soft things, but stand firmly by their side",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "Not say sweet words, but quietly stand on her side",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q16_c",
-        "text": "Your feelings grow deeper and deeper, so deep that even you struggle to pull away.",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
-          }
-        ]
+        "text": "Feel your emotions deepen to the point you can’t easily pull away",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q16_d",
-        "text": "Can't help but take care of them, worrying if they've eaten well, slept well, been treated well",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
-          }
-        ]
+        "text": "Can’t help but take care of her—worrying about her eating, sleeping, and being treated well",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q17",
-    "prompt": "In a group, the role you most often play is—",
+    "prompt": "In a group, your usual role is—",
     "options": [
       {
         "id": "q17_d",
-        "text": "The one who notices who's tired, who's falling behind, who needs care",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Noticing who’s tired, falling behind, or needs care",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       },
       {
         "id": "q17_a",
-        "text": "Not necessarily the most outgoing, but you have your own rhythm and boundaries",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "Not necessarily the most active, but having your own pace and boundaries",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q17_b",
-        "text": "The one who decides, pushes things forward, gets things moving",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Someone who makes decisions, pushes things forward, and gets things done",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q17_c",
-        "text": "Not very talkative, but emotionally deep and highly observant.",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "Quiet, but deeply observant and emotionally aware",
+        "scoreRules": [{ "code": "I3", "score": 3 }]
       }
     ]
   },
   {
     "id": "q18",
-    "prompt": "If someone is treated unfairly, your reaction would be—",
+    "prompt": "If someone is treated unfairly, your reaction is—",
     "options": [
       {
         "id": "q18_a",
-        "text": "Observe calmly first; you will not step out immediately.",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
-          }
-        ]
+        "text": "Observe calmly before taking action",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q18_b",
-        "text": "Speak back directly, even if the other person is stronger",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "Stand up directly, even if the other person is stronger",
+        "scoreRules": [{ "code": "I2", "score": 3 }]
       },
       {
         "id": "q18_c",
-        "text": "You'll remember that unfairness deeply and feel hurt for them for a long time",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "Feel the injustice deeply and carry it emotionally for a long time",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q18_d",
-        "text": "Protect the person first, then handle everything else later",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
-          }
-        ]
+        "text": "Protect the person first, then deal with the situation",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q19",
-    "prompt": "Which kind of living environment makes you feel most at ease—",
+    "prompt": "Which kind of environment makes you feel most comfortable—",
     "options": [
       {
         "id": "q19_c",
-        "text": "Enough private space to hold deep feelings and creative inspiration",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "A space for solitude, where intense emotions and inspiration can exist",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q19_a",
-        "text": "A slower pace, with flowers, light, and your own familiar little world",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "A slower pace with flowers, light, and your own familiar little world",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q19_d",
-        "text": "Safe, warm, with people coming and going, but everyone is well cared for",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Safe, warm, lively, with everyone well taken care of",
+        "scoreRules": [{ "code": "I4", "score": 3 }]
       },
       {
         "id": "q19_b",
-        "text": "Everything efficient and orderly, knowing exactly where things are and how to do them",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Efficient and organized, where everything has its place and rules",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       }
     ]
   },
   {
     "id": "q20",
-    "prompt": "The thing people most easily misunderstand about you is—",
+    "prompt": "What people misunderstand about you most easily is—",
     "options": [
       {
         "id": "q20_a",
-        "text": "They think you're lazy, but you're just slow-paced and slow to warm up",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "They think you’re lazy, but you’re just slow-paced and take time to warm up",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q20_b",
-        "text": "They think you're too domineering, but you just hate chaos and unfairness",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "They think you’re too strong, but you just dislike chaos and unfairness",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q20_c",
-        "text": "They think you're cold, but you just don't share your emotions with many people",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "They think you’re cold, but you just don’t show your emotions easily",
+        "scoreRules": [{ "code": "I3", "score": 3 }]
       },
       {
         "id": "q20_d",
-        "text": "They think you're easygoing, but you're actually very serious about protecting others",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "They think you’re easygoing, but you’re actually very firm when protecting others",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       }
     ]
   },
   {
     "id": "q21",
-    "prompt": "When expressing affection, you're more like someone who—",
+    "prompt": "How do you usually express liking someone—",
     "options": [
       {
         "id": "q21_b",
-        "text": "Using 'I've got your back' rather than sweet words",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
-          }
-        ]
+        "text": "By showing “I’m on your side” rather than saying sweet words",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q21_d",
-        "text": "Turning affection into daily care, visible in small thoughtful acts",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
-          }
-        ]
+        "text": "By turning it into everyday care through small actions",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       },
       {
         "id": "q21_a",
-        "text": "Quietly drawing closer, occasionally acting a bit clingy, but only with special people",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
-          }
-        ]
+        "text": "By quietly getting closer, occasionally acting cute—but only with special people",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q21_c",
-        "text": "Love keeps growing deeper, deep enough that even you cannot control it.",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
-          }
-        ]
+        "text": "By becoming deeply attached, almost unable to pull yourself away",
+        "scoreRules": [{ "code": "I3", "score": 3 }]
       }
     ]
   },
   {
     "id": "q22",
-    "prompt": "If a child at home suddenly throws a tantrum, you're most likely to—",
+    "prompt": "If a child nearby suddenly throws a tantrum, you are most likely to—",
     "options": [
       {
         "id": "q22_a",
-        "text": "Crouch down and sit with them, slowly letting them calm down",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "Crouch down and stay with them, waiting patiently for them to calm down",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q22_b",
-        "text": "Explain the rules clearly so they understand what's allowed and what's not",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Explain the rules clearly so they understand boundaries",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q22_c",
-        "text": "Get struck by their emotions immediately, composed on the surface but troubled inside",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "Feel a bit flustered inside, but remain calm on the outside",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q22_d",
-        "text": "Naturally pick them up, soothe them, get them to sleep, and clean up the aftermath.",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Naturally pick them up, comfort them, and handle everything",
+        "scoreRules": [{ "code": "I4", "score": 3 }]
       }
     ]
   },
   {
     "id": "q23",
-    "prompt": "At work, what you can't stand the most is—",
+    "prompt": "What bothers you most at work is—",
     "options": [
       {
         "id": "q23_d",
-        "text": "Valuing only efficiency without considering people's condition and capacity",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Focusing only on efficiency while ignoring people’s well-being",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       },
       {
         "id": "q23_c",
-        "text": "No feeling, no aesthetics, no space for emotion",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "text": "Lack of emotion, aesthetics, creativity, or fun",
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q23_a",
-        "text": "Being constantly rushed, disrupted, with no rhythm of your own",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "Being constantly rushed, interrupted, and unable to keep your own pace",
+        "scoreRules": [{ "code": "I1", "score": 2 }]
       },
       {
         "id": "q23_b",
-        "text": "There's clearly a better way, but no one's willing to implement it",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Knowing there’s a better way, but no one is willing to implement it",
+        "scoreRules": [{ "code": "I2", "score": 3 }]
       }
     ]
   },
   {
     "id": "q24",
-    "prompt": "Which sentence sounds most like you—",
+    "prompt": "Which sentence feels most like you—",
     "options": [
       {
         "id": "q24_a",
-        "text": "Taking it slow is fine; living at your own pace is what matters",
-        "scoreRules": [
-          {
-            "code": "I1",
-            "score": 2
-          }
-        ]
+        "text": "It’s okay to fall behind—just live at your own pace",
+        "scoreRules": [{ "code": "I1", "score": 3 }]
       },
       {
         "id": "q24_b",
-        "text": "Say what needs saying, push back when necessary",
-        "scoreRules": [
-          {
-            "code": "I2",
-            "score": 2
-          }
-        ]
+        "text": "Say what needs to be said, and stand your ground when necessary",
+        "scoreRules": [{ "code": "I2", "score": 2 }]
       },
       {
         "id": "q24_c",
         "text": "The deepest love is often hidden in silence",
-        "scoreRules": [
-          {
-            "code": "I3",
-            "score": 2
-          }
-        ]
+        "scoreRules": [{ "code": "I3", "score": 2 }]
       },
       {
         "id": "q24_d",
-        "text": "Anyone I let into my heart, I'll seriously try to protect",
-        "scoreRules": [
-          {
-            "code": "I4",
-            "score": 2
-          }
-        ]
+        "text": "Anyone I truly care about, I will protect with all my heart",
+        "scoreRules": [{ "code": "I4", "score": 2 }]
       }
     ]
   }
