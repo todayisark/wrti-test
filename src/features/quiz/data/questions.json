@@ -9,7 +9,7 @@
         "scoreRules": [
           {
             "code": "W1",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -19,7 +19,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 1
+            "score": 2
           }
         ]
       },
@@ -65,7 +65,7 @@
         "scoreRules": [
           {
             "code": "W4",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -85,7 +85,7 @@
         "scoreRules": [
           {
             "code": "W1",
-            "score": 3
+            "score": 2
           }
         ]
       }
@@ -111,7 +111,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -148,10 +148,6 @@
           {
             "code": "W2",
             "score": 2
-          },
-          {
-            "code": "W4",
-            "score": 1
           }
         ]
       },
@@ -162,10 +158,6 @@
           {
             "code": "W1",
             "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
           }
         ]
       },
@@ -176,10 +168,6 @@
           {
             "code": "W4",
             "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
           }
         ]
       },
@@ -189,11 +177,7 @@
         "scoreRules": [
           {
             "code": "W3",
-            "score": 2
-          },
-          {
-            "code": "W4",
-            "score": 1
+            "score": 3
           }
         ]
       }
@@ -209,7 +193,7 @@
         "scoreRules": [
           {
             "code": "W1",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -285,7 +269,7 @@
         "scoreRules": [
           {
             "code": "W3",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -331,7 +315,7 @@
         "scoreRules": [
           {
             "code": "W4",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -377,7 +361,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 1
+            "score": 3
           }
         ]
       }
@@ -449,7 +433,7 @@
         "scoreRules": [
           {
             "code": "W1",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -495,7 +479,7 @@
         "scoreRules": [
           {
             "code": "W2",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -532,10 +516,6 @@
           {
             "code": "W3",
             "score": 2
-          },
-          {
-            "code": "W1",
-            "score": 1
           }
         ]
       },
@@ -545,11 +525,7 @@
         "scoreRules": [
           {
             "code": "W4",
-            "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
+            "score": 3
           }
         ]
       },
@@ -560,10 +536,6 @@
           {
             "code": "W1",
             "score": 2
-          },
-          {
-            "code": "W2",
-            "score": 1
           }
         ]
       },
@@ -574,10 +546,6 @@
           {
             "code": "W2",
             "score": 2
-          },
-          {
-            "code": "W3",
-            "score": 1
           }
         ]
       }
@@ -603,7 +571,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 1
+            "score": 2
           }
         ]
       },
@@ -613,7 +581,7 @@
         "scoreRules": [
           {
             "code": "I1",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -640,10 +608,6 @@
           {
             "code": "I1",
             "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
           }
         ]
       },
@@ -653,11 +617,7 @@
         "scoreRules": [
           {
             "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
+            "score": 3
           }
         ]
       },
@@ -668,10 +628,6 @@
           {
             "code": "I3",
             "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
           }
         ]
       },
@@ -682,10 +638,6 @@
           {
             "code": "I4",
             "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
           }
         ]
       }
@@ -721,7 +673,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -747,11 +699,7 @@
         "scoreRules": [
           {
             "code": "I1",
-            "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
+            "score": 3
           }
         ]
       },
@@ -762,10 +710,6 @@
           {
             "code": "I2",
             "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
           }
         ]
       },
@@ -776,10 +720,6 @@
           {
             "code": "I3",
             "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
           }
         ]
       },
@@ -790,10 +730,6 @@
           {
             "code": "I4",
             "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
           }
         ]
       }
@@ -839,7 +775,7 @@
         "scoreRules": [
           {
             "code": "I3",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -856,10 +792,6 @@
           {
             "code": "I1",
             "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
           }
         ]
       },
@@ -869,11 +801,7 @@
         "scoreRules": [
           {
             "code": "I2",
-            "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
+            "score": 3
           }
         ]
       },
@@ -884,10 +812,6 @@
           {
             "code": "I3",
             "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
           }
         ]
       },
@@ -898,10 +822,6 @@
           {
             "code": "I4",
             "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
           }
         ]
       }
@@ -937,7 +857,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -983,7 +903,7 @@
         "scoreRules": [
           {
             "code": "I3",
-            "score": 2
+            "score": 3
           }
         ]
       },
@@ -1010,10 +930,6 @@
           {
             "code": "I2",
             "score": 2
-          },
-          {
-            "code": "I4",
-            "score": 1
           }
         ]
       },
@@ -1024,10 +940,6 @@
           {
             "code": "I4",
             "score": 2
-          },
-          {
-            "code": "I2",
-            "score": 1
           }
         ]
       },
@@ -1038,10 +950,6 @@
           {
             "code": "I1",
             "score": 2
-          },
-          {
-            "code": "I3",
-            "score": 1
           }
         ]
       },
@@ -1051,11 +959,7 @@
         "scoreRules": [
           {
             "code": "I3",
-            "score": 2
-          },
-          {
-            "code": "I1",
-            "score": 1
+            "score": 3
           }
         ]
       }
@@ -1101,7 +1005,7 @@
         "scoreRules": [
           {
             "code": "I4",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -1147,7 +1051,7 @@
         "scoreRules": [
           {
             "code": "I2",
-            "score": 2
+            "score": 3
           }
         ]
       }
@@ -1163,7 +1067,7 @@
         "scoreRules": [
           {
             "code": "I1",
-            "score": 2
+            "score": 3
           }
         ]
       },
