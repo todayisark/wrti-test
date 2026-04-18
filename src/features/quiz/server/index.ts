@@ -3,23 +3,10 @@
  */
 
 // 计分相关
-export {
-  createEmptyScoreMap,
-  applyOptionScore,
-  calculateScores,
-  getTopWendyCharacter,
-  getTopIreneCharacter,
-  getFinalCharacters,
-} from './scoring';
+export { createEmptyScoreMap, applyOptionScore, calculateScores } from './scoring';
 
 // 小剧场生成
-export { generateStory, generateMultipleStories, previewTemplates } from './story';
+export { generateStory } from './story';
 
 // 结果计算
-export {
-  validateAnswers,
-  calculateResult,
-  calculateResultWithLocale,
-  getCharacterCards,
-  regenerateStory,
-} from './result';
+export { calculateResultWithLocale } from './result';

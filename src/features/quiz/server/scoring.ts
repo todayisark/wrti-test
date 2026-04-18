@@ -68,72 +68,6 @@ export const calculateScores = (options: QuizOption[]): ScoreMap => {
 };
 
 /**
- * 从 Wendy 组中找出得分最高的人格
- * 平局时选择序号小的人格（W1 > W2 > W3 > W4）
- * @param scoreMap 分数表
- * @returns Wendy 人格 code
- */
-export const getTopWendyCharacter = (scoreMap: ScoreMap): WendyCode => {
-  const wendyCodes: WendyCode[] = ['W1', 'W2', 'W3', 'W4'];
-
-  let topCharacter: WendyCode = 'W1';
-  let maxScore = scoreMap.wendy['W1'];
-
-  // 从 W2 开始遍历（W1 已经作为初始值）
-  for (let i = 1; i < wendyCodes.length; i++) {
-    const code = wendyCodes[i];
-    const score = scoreMap.wendy[code];
-
-    // 只有严格大于才更新（保证平局时选序号小的）
-    if (score > maxScore) {
-      maxScore = score;
-      topCharacter = code;
-    }
-  }
-
-  return topCharacter;
-};
-
-/**
- * 从 Irene 组中找出得分最高的人格
- * 平局时选择序号小的人格（I1 > I2 > I3 > I4）
- * @param scoreMap 分数表
- * @returns Irene 人格 code
- */
-export const getTopIreneCharacter = (scoreMap: ScoreMap): IreneCode => {
-  const ireneCodes: IreneCode[] = ['I1', 'I2', 'I3', 'I4'];
-
-  let topCharacter: IreneCode = 'I1';
-  let maxScore = scoreMap.irene['I1'];
-
-  // 从 I2 开始遍历（I1 已经作为初始值）
-  for (let i = 1; i < ireneCodes.length; i++) {
-    const code = ireneCodes[i];
-    const score = scoreMap.irene[code];
-
-    // 只有严格大于才更新（保证平局时选序号小的）
-    if (score > maxScore) {
-      maxScore = score;
-      topCharacter = code;
-    }
-  }
-
-  return topCharacter;
-};
-
-/**
- * 获取最终人格组合
- * @param scoreMap 分数表
- * @returns [Wendy人格, Irene人格]
- */
-export const getFinalCharacters = (scoreMap: ScoreMap): [WendyCode, IreneCode] => {
-  const wendyCharacter = getTopWendyCharacter(scoreMap);
-  const ireneCharacter = getTopIreneCharacter(scoreMap);
-
-  return [wendyCharacter, ireneCharacter];
-};
-
-/**
  * 从选项中获取某个问题某个人格的得分（用于平分处理）
  */
 const getScoreInQuestion = (
@@ -187,7 +121,7 @@ export const getTopWendyCharacterWithTiebreak = (
   ];
 
   for (const qId of tiebreakQuestions) {
-    const scores: Record<WendyCode, number> = { W1: 0, W2: 0, W3: 0, W4: 0 };
+    const scores: Record<WendyCode, number> = { W0: 0, W1: 0, W2: 0, W3: 0, W4: 0 };
 
     for (const code of topCharacters) {
       scores[code] = getScoreInQuestion(qId, code, selectedOptions);
@@ -245,7 +179,7 @@ export const getTopIreneCharacterWithTiebreak = (
   ];
 
   for (const qId of tiebreakQuestions) {
-    const scores: Record<IreneCode, number> = { I1: 0, I2: 0, I3: 0, I4: 0 };
+    const scores: Record<IreneCode, number> = { I0: 0, I1: 0, I2: 0, I3: 0, I4: 0 };
 
     for (const code of topCharacters) {
       scores[code] = getScoreInQuestion(qId, code, selectedOptions);
@@ -264,12 +198,41 @@ export const getTopIreneCharacterWithTiebreak = (
 };
 
 /**
+ * 统计0分选项的数量
+ * @param options 选择的选项列表
+ * @param startQ 起始题号（包含）
+ * @param endQ 结束题号（包含）
+ * @returns 0分选项的数量
+ */
+const countZeroScoreOptions = (options: QuizOption[], startQ: number, endQ: number): number => {
+  let count = 0;
+  for (let i = startQ; i <= endQ; i++) {
+    const qId = `q${i}`;
+    const option = options.find((opt) => opt.id.toLowerCase().startsWith(qId.toLowerCase()));
+    if (option && option.scoreRules.length === 0) {
+      count++;
+    }
+  }
+  return count;
+};
+
+/**
  * 获取最终人格组合（带锚题平分处理）
+ * 如果前12题和后12题各有2个以上的0分选项，返回特殊结果 W0_I0
  */
 export const getFinalCharactersWithTiebreak = (
   scoreMap: ScoreMap,
   selectedOptions: QuizOption[],
 ): [WendyCode, IreneCode] => {
+  // 检查0分选项数量
+  const wendyZeroCount = countZeroScoreOptions(selectedOptions, 1, 12);
+  const ireneZeroCount = countZeroScoreOptions(selectedOptions, 13, 24);
+
+  // 如果前12题和后12题各有2个以上的0分选项，返回 W0_I0
+  if (wendyZeroCount >= 2 && ireneZeroCount >= 2) {
+    return ['W0', 'I0'];
+  }
+
   const wendyCharacter = getTopWendyCharacterWithTiebreak(scoreMap, selectedOptions);
   const ireneCharacter = getTopIreneCharacterWithTiebreak(scoreMap, selectedOptions);
   return [wendyCharacter, ireneCharacter];
