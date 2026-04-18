@@ -1,4 +1,12 @@
 {
+  "W0": {
+    "code": "W0",
+    "group": "wendy",
+    "emoji": "🫧",
+    "job": "Exploring Life Path",
+    "tags": ["undefined", "waiting", "gentle", "accepting", "open"],
+    "story": "She's in an uncertain phase, not yet fully defining her direction, yet maintaining an openness and acceptance because of it. She understands waiting and is willing to embrace more possibilities. In her relationship with Bae Ju-hyeon, she carries a gentle yet uncertain expectation, like two souls slowly drawing closer, both learning how to love each other better."
+  },
   "W1": {
     "code": "W1",
     "group": "wendy",
@@ -30,6 +38,14 @@
     "job": "Entertainment Company CEO",
     "tags": ["intuitive", "independent", "detached", "biased", "sharp"],
     "story": "She carries a distinct sense of ease and the generosity of the wealthy, used to frankly expressing her likes and dislikes, and never shies away from her favoritism. Rather than subtle probing, she believes in direct and clear relationships, so she always gives an impression of clear boundaries and knowing how to indulge people. She gives freedom, and also shows clear protective favoritism toward the people she truly recognizes; toward Bae Ju-hyeon, she always pours in excessive attention and affection, never hiding her fondness for her."
+  },
+  "I0": {
+    "code": "I0",
+    "group": "irene",
+    "emoji": "🌙",
+    "job": "Exploring Life Journey",
+    "tags": ["undefined", "accepting", "gentle", "belonging", "cherishing"],
+    "story": "She's not in a hurry to categorize herself into any definite form, but approaches life with a more open stance. She cherishes every moment of being accepted, and has learned to accept others gently. Next to Shon Seung-wan, she's like finally finding the belonging where she can settle down slowly, and that sense of preciousness makes her more willing to guard this hard-won relationship."
   },
   "I1": {
     "code": "I1",

@@ -6,11 +6,13 @@
 
 /**
  * 人格代码类型
+ * W0: 孙承完（Wendy）的特殊人格（高拒答率）
  * W1-W4: 孙承完（Wendy）的四种人格
+ * I0: 裴柱现（Irene）的特殊人格（高拒答率）
  * I1-I4: 裴柱现（Irene）的四种人格
  */
-export type WendyCode = 'W1' | 'W2' | 'W3' | 'W4';
-export type IreneCode = 'I1' | 'I2' | 'I3' | 'I4';
+export type WendyCode = 'W0' | 'W1' | 'W2' | 'W3' | 'W4';
+export type IreneCode = 'I0' | 'I1' | 'I2' | 'I3' | 'I4';
 export type CharacterCode = WendyCode | IreneCode;
 
 /**
