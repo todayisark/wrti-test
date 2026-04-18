@@ -29,39 +29,3 @@ export const generateStory = (
   const templates = getStoryTemplatesByLocale(locale);
   return templates[storyKey] || '这个人格组合的故事还在创作中。';
 };
-
-/**
- * 批量生成多个小剧场（用于展示不同可能性）
- * @param wendyCode Wendy 人格类型
- * @param ireneCode Irene 人格类型
- * @param count 生成数量
- * @returns 生成的小剧场数组
- */
-export const generateMultipleStories = (
-  wendyCode: WendyCode,
-  ireneCode: IreneCode,
-  locale: Locale = 'zh-CN',
-  count: number = 3,
-): string[] => {
-  const story = generateStory(wendyCode, ireneCode, locale);
-  return Array.from({ length: count }, () => story);
-};
-
-/**
- * 预览句子池内容（开发/调试用）
- * @param wendyCode Wendy 人格类型
- * @param ireneCode Irene 人格类型
- * @returns 该人格组合可用的所有句子片段
- */
-export const previewTemplates = (
-  wendyCode: WendyCode,
-  ireneCode: IreneCode,
-  locale: Locale = 'zh-CN',
-) => {
-  const storyKey: ChildCombinationKey = `${wendyCode}_${ireneCode}`;
-  const templates = getStoryTemplatesByLocale(locale);
-  return {
-    key: storyKey,
-    story: templates[storyKey] || '',
-  };
-};
