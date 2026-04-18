@@ -5,7 +5,7 @@
  * 项目介绍和开始测试入口
  */
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { Box, Typography, Button, Collapse, IconButton } from '@mui/material';
 import { ArrowForward, BarChart, ExpandMore, ExpandLess } from '@mui/icons-material';
@@ -57,18 +57,20 @@ const HomePage = () => {
   const latestLog = changelog[0];
   const historyLogs = changelog.slice(1);
 
-  // 使用函数式初始化，只在组件首次渲染时执行一次
+  // ✅ 使用 useState 的 lazy initializer，只在客户端首次渲染时执行一次
   const [hasResult, setHasResult] = useState(() => {
-    if (typeof window !== 'undefined') {
-      return !!localStorage.getItem('quizResult');
-    }
-    return false;
+    // 服务器端渲染时返回 false
+    if (typeof window === 'undefined') return false;
+    // 客户端首次渲染时读取 localStorage
+    return !!localStorage.getItem('quizResult');
   });
 
   const [expandLog, setExpandLog] = useState(false);
 
-  // 初始化用户 UUID
-  const userUUID = getOrCreateUserUUID();
+  // ✅ 只在 effect 中处理真正的副作用（UUID 初始化）
+  useEffect(() => {
+    getOrCreateUserUUID();
+  }, []);
 
   const handleStartQuiz = () => {
     localStorage.removeItem('quizResult');
