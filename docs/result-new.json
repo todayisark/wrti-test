@@ -1,68 +1,58 @@
 {
   "success": true,
   "data": {
-    "totalSubmissions": 39,
-    "since": "2026-04-16T16:49:01.768118+00:00",
+    "totalSubmissions": 37,
+    "since": "2026-04-17T06:49:01.768118+00:00",
     "distribution": [
       {
-        "personalityType": "W2_I1",
-        "count": 12,
-        "ratio": 30.77
+        "personalityType": "W2_I3",
+        "count": 8,
+        "ratio": 21.62
       },
       {
-        "personalityType": "W2_I3",
-        "count": 6,
-        "ratio": 15.38
+        "personalityType": "W2_I1",
+        "count": 7,
+        "ratio": 18.92
       },
       {
         "personalityType": "W3_I1",
-        "count": 5,
-        "ratio": 12.82
+        "count": 6,
+        "ratio": 16.22
       },
       {
-        "personalityType": "W2_I2",
-        "count": 3,
-        "ratio": 7.69
+        "personalityType": "W1_I4",
+        "count": 2,
+        "ratio": 5.41
+      },
+      {
+        "personalityType": "W2_I4",
+        "count": 2,
+        "ratio": 5.41
+      },
+      {
+        "personalityType": "W3_I4",
+        "count": 2,
+        "ratio": 5.41
       },
       {
         "personalityType": "W4_I1",
-        "count": 3,
-        "ratio": 7.69
-      },
-      {
-        "personalityType": "W3_I2",
         "count": 2,
-        "ratio": 5.13
-      },
-      {
-        "personalityType": "W4_I2",
-        "count": 2,
-        "ratio": 5.13
-      },
-      {
-        "personalityType": "W4_I3",
-        "count": 2,
-        "ratio": 5.13
+        "ratio": 5.41
       },
       {
         "personalityType": "W1_I1",
         "count": 1,
-        "ratio": 2.56
+        "ratio": 2.7
       },
       {
-        "personalityType": "W2_I4",
+        "personalityType": "W3_I2",
         "count": 1,
-        "ratio": 2.56
+        "ratio": 2.7
       },
       {
-        "personalityType": "W3_I4",
+        "personalityType": "W4_I2",
         "count": 1,
-        "ratio": 2.56
-      },
-      {
-        "personalityType": "W4_I4",
-        "count": 1,
-        "ratio": 2.56
+        "ratio": 2.7
       },
       {
         "personalityType": "W1_I2",
@@ -75,7 +65,7 @@
         "ratio": 0
       },
       {
-        "personalityType": "W1_I4",
+        "personalityType": "W2_I2",
         "count": 0,
         "ratio": 0
       },
@@ -83,8 +73,18 @@
         "personalityType": "W3_I3",
         "count": 0,
         "ratio": 0
+      },
+      {
+        "personalityType": "W4_I3",
+        "count": 0,
+        "ratio": 0
+      },
+      {
+        "personalityType": "W4_I4",
+        "count": 0,
+        "ratio": 0
       }
     ],
-    "generatedAt": "2026-04-17T04:38:18.296Z"
+    "generatedAt": "2026-04-18T06:39:33.066Z"
   }
 }
