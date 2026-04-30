@@ -14,6 +14,7 @@ import { defaultLocale, hasLocale, type Locale } from '@/i18n/config';
 import homeZhCN from '@/i18n/dictionaries/home/zh-CN.json';
 import homeEnUS from '@/i18n/dictionaries/home/en-US.json';
 import { generateUUID } from '@/lib/uuid';
+import Link from 'next/link';
 
 type ChangelogItem = {
   version: string;
@@ -424,6 +425,12 @@ const HomePage = () => {
             </Typography>
           </Box>
         </Box>
+      </Box>
+      {/* 备案号 */}
+      <Box sx={{ mt: 4, textAlign: 'center', fontSize: '0.8rem', color: 'text.secondary' }}>
+        <Link href="https://beian.miit.gov.cn/" target="_blank" rel="noopener noreferrer">
+          京ICP备2026023010号
+        </Link>
       </Box>
     </Box>
   );
