@@ -1,36 +1,70 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# WRTI 人格测试 · Personality Quiz
 
-## Getting Started
+> 你是「哪种孙承完 × 哪种裴柱现 的孩子」？
+> 
+> *Discover which Wendy × Irene personality combination you’d be their child of.*
 
-First, run the development server:
+-----
+
+## 项目简介 · About
+
+这是一个 CP 向人格测试网站。用户完成一套单选题后，系统根据答案计算出最匹配的孙承完（Wendy）人格和裴柱现（Irene）人格，并生成专属的「一家三口小剧场」结果页。
+
+A fan-made personality quiz web app. After completing a set of multiple-choice questions, users receive their matched Wendy type × Irene type, along with a short personalized “family skit” result.
+
+-----
+
+## 技术栈 · Tech Stack
+
+- **框架 Framework** — Next.js 16 (App Router) + React 19
+- **样式 Styling** — Tailwind CSS v4 + MUI v9
+- **后端 Backend** — Next.js API Routes + Zod 校验
+- **数据库 Database** — Supabase
+- **部署 Deploy** — Vercel
+
+-----
+
+## 本地运行 · Getting Started
 
 ```bash
+# 安装依赖 Install dependencies
+npm install
+
+# 启动开发服务器 Start dev server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+访问 · Open <http://localhost:3000>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+-----
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 项目结构 · Project Structure
 
-## Learn More
+```
+src/
+├── app/
+│   ├── (public)/          # 首页、答题页、结果页
+│   ├── [lang]/(public)/   # 多语言路由
+│   └── api/quiz/submit/   # 计分与结果 API
+├── features/quiz/
+│   ├── data/              # 人格卡片 & 题目数据
+│   └── constants/         # 计分规则
+└── components/            # 通用组件
+```
 
-To learn more about Next.js, take a look at the following resources:
+-----
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 核心逻辑 · Core Logic
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. 用户完成答题 → 提交至 `POST /api/quiz/submit`
+1. 后端对每个选项的 `scoreRules` 累计 Wendy / Irene 各维度分数
+1. 各取最高分判定人格类型
+1. 返回结果标题 + 摘要 + 小剧场文案
 
-## Deploy on Vercel
+All scoring and personality matching happens server-side; the frontend only renders results.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+-----
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+MIT
