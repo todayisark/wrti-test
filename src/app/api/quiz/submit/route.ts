@@ -7,8 +7,6 @@ import { NextResponse } from 'next/server';
 import { ZodError } from 'zod';
 import { QuizSubmitSimpleSchema } from '@/features/quiz/schemas';
 import { calculateResultWithLocale } from '@/features/quiz/server';
-import { createClient } from '@/lib/supabase/server';
-import { generateUUID } from '@/lib/uuid';
 
 /**
  * 提交测试答案并获取结果
@@ -27,37 +25,6 @@ export const POST = async (request: Request) => {
       validated.userUUID,
       validated.locale || 'zh-CN',
     );
-
-    // 3.2 保证 user_uuid 一定是合法 UUID（兼容旧版本本地缓存）
-    const uuidRegex = /^[0-9a-f]{8}-[0-9a-f]{4}-[1-8][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
-    const userUUID =
-      validated.userUUID && uuidRegex.test(validated.userUUID)
-        ? validated.userUUID
-        : generateUUID();
-
-    // 3.5 保存结果到数据库
-    const supabase = await createClient();
-
-    // 提取最终人格组合结果
-    const personalityResult = `${result.wendyType.code}_${result.ireneType.code}`;
-
-    const { error: insertError } = await supabase.from('quiz_results').insert({
-      user_uuid: userUUID,
-      selected_options: validated.optionIds,
-      scores: result.scores,
-      personality_result: personalityResult,
-    });
-
-    if (insertError) {
-      console.error('数据库插入错误:', insertError);
-      return NextResponse.json(
-        {
-          success: false,
-          error: '结果保存失败，请稍后重试',
-        },
-        { status: 500 },
-      );
-    }
 
     // 4. 返回成功响应
     return NextResponse.json({
